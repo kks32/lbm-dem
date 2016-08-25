@@ -28,8 +28,6 @@ configure.scan
 *.h#
 *.tcc~
 *.tcc#
-felib
-felibtest
 *.gcda*
 *.gcno*
 *coverage.info*
@@ -37,4 +35,4 @@ src/*#
 include/*#
 doc/*
 *.swp*
-
+lbmdem
