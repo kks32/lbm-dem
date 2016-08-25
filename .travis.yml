@@ -6,12 +6,9 @@ services:
     - docker
 
 before_install:
-    - docker pull cbgeo/lbmdem
-    - docker run -ti cbgeo/lbmdem /bin/bash -c "git clone https://github.com/cb-geo/lbmdem.git && cd lbmdem && aclocal -I ./m4 && autoconf && automake --add-missing && ./configure && make"
- 
+    - docker pull cbgeo/lbmdem 
 script:
-    - pwd 
-    - ./lbmdem
+    - docker run -ti cbgeo/lbmdem /bin/bash -c "git clone https://github.com/cb-geo/lbmdem.git && cd lbmdem && aclocal -I ./m4 && autoconf && automake --add-missing && ./configure && make && ./lbmdem"
 
 notifications:
   slack:
