@@ -11,7 +11,7 @@
 
 ## Compile & Run
 
-0. Run `aclocal -I ./m4; autoconf; automake` or `autoreconf -fi`, if `configure` script is missing.
+0. Run `aclocal -I ./m4 && autoconf && automake` or `autoreconf -fi`, if `configure` script is missing.
 
 1. Run `./configure`
 
@@ -21,7 +21,7 @@
 
 ## Run  test cases
 
-0. Run `autoreconf -fi`, if `configure` script is missing.
+0. Run `aclocal -I ./m4 && autoconf && automake` or `autoreconf -fi`, if `configure` script is missing.
 
 1. Run `./configure`
 
