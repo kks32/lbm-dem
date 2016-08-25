@@ -1,6 +1,8 @@
 # 2D/3D Lattice Boltzmann - Discrete Element Method (lbmdem)
 > Cambridge Berkeley - Geomechanics
 
+[![Build status](https://api.travis-ci.org/cb-geo/lbmdem.svg)](https://api.travis-ci.org/cb-geo/lbmdem.svg)
+
 ## Install dependencies
 
 * Docker image for CB-Geo LBM-DEM code [https://hub.docker.com/r/cbgeo/lbmdem](https://hub.docker.com/r/cbgeo/lbmdem)
@@ -13,7 +15,7 @@
 
 1. Run `./configure`
 
-2. make clean && make -jN (where N is the number of cores)
+2. `make clean && make -jN` (where N is the number of cores)
 
 3. Run lbmdem `./lbmdem`
 

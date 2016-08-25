@@ -1,0 +1,19 @@
+sudo: required
+
+language: ruby
+
+services:
+    - docker
+
+before_install:
+    - docker pull cbgeo/lbmdem
+    - docker run -ti cbgeo/lbmdem /bin/bash -c "git clone git@github.com:cb-geo/lbmdem.git && cd lbmdem && aclocal -I ./m4 && autoconf && automake && ./configure"
+ 
+script:
+    - make clean && make 
+    - ./lbmdem
+
+notifications:
+  slack:
+    rooms:
+      - cb-geo:0N3fJy823MGsJvcDB91m4p8H#lbmdem
