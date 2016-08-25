@@ -1,7 +1,7 @@
 # 2D/3D Lattice Boltzmann - Discrete Element Method (lbmdem)
 > Cambridge Berkeley - Geomechanics
 
-[![Build status](https://api.travis-ci.org/cb-geo/lbmdem.svg)](https://api.travis-ci.org/cb-geo/lbmdem.svg)
+[![Build status](https://api.travis-ci.org/cb-geo/lbmdem.svg)](https://travis-ci.org/cb-geo/lbmdem/builds)
 
 ## Install dependencies
 
