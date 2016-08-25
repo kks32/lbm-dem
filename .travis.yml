@@ -1,14 +1,69 @@
+#########################
+# project configuration #
+#########################
+
+# C++ project
+language: cpp
+
+dist: trusty
 sudo: required
 
-language: ruby
 
-services:
-    - docker
+################
+# build matrix #
+################
+matrix:
+  include:
+    - compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-4.9
+      env: COMPILER=g++-4.9
+    - compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+      env: COMPILER=g++-5
+    - compiler: clang
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.6
+          packages:
+            - clang-3.6
+      env: COMPILER=clang++-3.6
+    - compiler: clang
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.7
+          packages:
+            - clang-3.7
+      env: COMPILER=clang++-3.7
 
-before_install:
-    - docker pull cbgeo/lbmdem 
+
+################
+# before script #
+################
+before_script:
+    - aclocal -I ./m4 && autoconf && automake --add-missing
+
+################
+# build script #
+################
+
 script:
-    - docker run -ti cbgeo/lbmdem /bin/bash -c "git clone https://github.com/cb-geo/lbmdem.git && cd lbmdem && aclocal -I ./m4 && autoconf && automake --add-missing && ./configure && make && ./lbmdem"
+    - ./configure 
+    - make clean && make
+    - ./lbmdem
 
 notifications:
   slack:
