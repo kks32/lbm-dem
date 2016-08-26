@@ -9,6 +9,16 @@ dist: trusty
 sudo: required
 
 
+###################
+# global settings #
+###################
+
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "OB7nqij1Fy5sXVbufBRibcViG23PVRCXsp5fxWSQ9XIwxyAxpYJA/sP6Jg9xdr67D7M+J0RUMSlJ0mEQ5F9e8SxLffsEh61LbzwY+M9ceZ5eJOTWHcOwacf9TYRIgkXz11ed2N9CKyZlXk4dffMwLH95L7XOry74wstPHLlK5SgEc40g0ehDl0OqSJWC3wEgqYRGhjypb+TSQWAhUboNnNX3u5hwTjjNJH14YTlHuYLmfcJ4fnrkRzLgDsFCDY80/zXPbyacQl3XQgALzgFUUTwiqKtp7HeovFf8Ez8djBTxbMuzRQkq5JxTnZdLghh5KRK6SDZpV4xtK7OD4r1gHKizmOlMHpZe2VX1WkB051Nf/bfeRN9rmQWROt5irXKZBpq60WX31dUOobh6cfcCTY5BbUFVajxWSYgePq3PmlTFk/6tymoXR9XyyybJZ1gmIx0GUK+FBcAy9m+YkLQrVZsS2unIN7qZRS51NGxRkesV1tY49CdPEG411SMXYJVHSjH0gnJRo5tnWQYgCxyi97+ayt3+AZBr6vraSecp+nrKZRcxwGTq6VZ5nwRPuU9XXVZV1UfhmDfqQJUV1zMkiDL9BR+jiwe8mNPTa3Nzh7F3lCL9bCCdicVFCsBLUlfLJG/qzHAFFjWD2oW0qAKNE62Pl1Gm6cW8dfm0iKzT5pM="
+
 ################
 # build matrix #
 ################
