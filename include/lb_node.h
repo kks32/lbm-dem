@@ -54,10 +54,10 @@ class lbmdem::LbNode {
   LbNode& operator=(const LbNode<Tdim>&);
 
  protected:
-  //! node id
+  //! LB node id
   lbmdem::Lint id_;
 
-  //! nodal coordinates
+  //! LB nodal coordinates
   std::array<lbmdem::Lint, Tdim> coordinates_;
 };
 
