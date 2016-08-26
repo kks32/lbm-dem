@@ -36,3 +36,4 @@ include/*#
 doc/*
 *.swp*
 lbmdem
+lbmdemtest

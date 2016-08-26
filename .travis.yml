@@ -62,8 +62,9 @@ before_script:
 
 script:
     - ./configure 
-    - make clean && make
+    - make clean && make check
     - ./lbmdem
+    - ./lbmdemtest
 
 notifications:
   slack:

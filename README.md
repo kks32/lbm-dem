@@ -2,6 +2,7 @@
 > Cambridge Berkeley - Geomechanics
 
 [![Build status](https://api.travis-ci.org/cb-geo/lbmdem.svg)](https://travis-ci.org/cb-geo/lbmdem/builds)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cb-geo/develop/license.md)
 
 ## Install dependencies
 
