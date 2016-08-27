@@ -74,7 +74,7 @@ if test x"$debugit" = x"yes"; then
     AM_CXXFLAGS="$AM_CXXFLAGS -g -Wall -Werror -Wno-uninitialized -O0 -fpermissive"
 else
     AC_DEFINE([NDEBUG],[],[No-debug Mode])
-    AM_CXXFLAGS="$AM_CXXFLAGS -g -O3 -std=c++11 -fPIC -Wall -Wno-uninitialized -fpermissive"
+    AM_CXXFLAGS="$AM_CXXFLAGS -g -std=c++11 -O0 -coverage -fPIC -Wall -Wno-uninitialized -fpermissive"
 
 fi
 
