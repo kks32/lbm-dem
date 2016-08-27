@@ -78,7 +78,7 @@ matrix:
         - COMPILER=g++-5
         - SPECIAL=coverity
  
-   - os: linux
+    - os: linux
       compiler: gcc
       addons:
         apt:
