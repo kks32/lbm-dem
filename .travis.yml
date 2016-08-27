@@ -1,0 +1,101 @@
+#########################
+# project configuration #
+#########################
+
+# C++ project
+language: cpp
+
+dist: trusty
+sudo: required
+
+
+###################
+# global settings #
+###################
+
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+  - secure: "j3gxQHpmALWW1VYvX2+rv/xJ2H32W0SQXkyY83PY/PJxphuiIxWtSAM6wn0SWgBBKIi/1IAUU7xiEQewodkMXB0hjLxUDEsr7nhONPxkdFmgM4nOuqDmR2XJPACpWZV8H1aDxl37vYeWCIio0o2Q1TxtCFz4cENpVmbfuGnq3RCdDWkiwvzQqnXmk0Ac8hRS6KrWwBGOeoCFiR7+/wf0/6lYZZB+KBY7Vjuc40Zv3KZIH4tDfokrQDBmXluV4pQiPc1yz7xy180HNs2pRSTlEfknKGm/Go/wnEVu+OiEugVNt/mP1PRFV52+QuKnjqjOkrtlnEM5al/tza/PAyNdGOEoowAyjMJ8gOIw0NUWXIFZ8EQ0cvgVpLq2Azaamiq43wCVRrH7Ybg7lAVZt8+aQz7CsSbq08qS+OjxRijKxZ4pSRcYoeyXWmZ9K2rRyrJUQTE/v5i0EEgOdFwInxeOxlAgrHu1FhF9gAY+Bgb+O7XPFZTnkHkJlVghk+/mTHLVJpJ03t9gdYrqrENH7m2VfeE+q5zjxRuejLzWzrH5fSJewc3E4IUQqiJfM3NcS7Ra+p5ToRyhm/bnYJotptW6PAV2rJUK3PvLL+uLkSooHDoT/wRi9PvgKzSuXcs0pW7w0Uep0VlpJBzuMi3plI9pY/QDjnIlWwCzRCByWQ3wFsY="
+
+################
+# build matrix #
+################
+matrix:
+  include:
+    - compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-4.9
+      env: COMPILER=g++-4.9
+    - compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+      env: COMPILER=g++-5
+    - compiler: clang
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.6
+          packages:
+            - clang-3.6
+      env: COMPILER=clang++-3.6
+    - compiler: clang
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.7
+          packages:
+            - clang-3.7
+      env: COMPILER=clang++-3.7
+  
+    - os: linux
+      compiler: gcc
+      before_install: echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-5', 'valgrind']
+        coverity_scan:
+          project:
+            name: "cb-geo/lbmdem"
+            description: "LBM-DEM Coverity scan build submitted via Travis CI"
+          notification_email: cued.geomechanics@gmail.com
+          build_command_prepend: "./configure; make clean"
+          build_command:   "make -j 4"
+          branch_pattern: coverity_scan
+      env:
+        - COMPILER=g++-5
+        - SPECIAL=coverity
+
+
+################
+# before script #
+################
+before_script:
+    - aclocal -I ./m4 && autoconf && automake --add-missing
+
+################
+# build script #
+################
+
+script:
+    - ./configure 
+    - make clean && make check
+    - ./lbmdem
+    - ./lbmdemtest
+
+notifications:
+  slack:
+    rooms:
+      - cb-geo:0N3fJy823MGsJvcDB91m4p8H#lbmdem
