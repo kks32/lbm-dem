@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cb-geo/develop/license.md)
 [![Coverity Scan Build Status](https://scan.coverity.com/projects/10011/badge.svg)](https://scan.coverity.com/projects/cb-geo-lbmdem)
 [![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](http://cb-geo.github.io/lbmdem)
+[![Coverage Status](https://coveralls.io/repos/github/cb-geo/lbmdem/badge.svg?branch=develop)](https://coveralls.io/github/cb-geo/lbmdem?branch=develop)
 
 
 ## Install dependencies
