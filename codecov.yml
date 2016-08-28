@@ -1,0 +1,18 @@
+# Codecov.io configuration
+coverage:
+  precision: 2
+  round: down
+  range: "70...100"
+  notify:
+    require_ci_to_pass: yes
+
+  status:
+    project: yes
+    patch: yes
+    changes: yes
+
+  ignore: # files and folders for processing
+    - external/*
+comment:
+  layout: "header, diff, changes"
+behavior: default

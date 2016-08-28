@@ -103,7 +103,7 @@ matrix:
         - bash <(curl -s https://codecov.io/bash)
       env:
         - COMPILER=g++-4.9
-        - SPECIAL=coveralls
+        - SPECIAL=codecoverage
 
 ################
 # before script #
