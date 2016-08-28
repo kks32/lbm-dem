@@ -5,7 +5,13 @@ coverage:
   range: "70...100"
   notify:
     require_ci_to_pass: yes
-
+    slack:
+      default:
+        url: "https://hooks.slack.com/services/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"
+        branches: lbmdem              
+        threshold: 1%
+        attachments: "sunburst, diff" 
+        message: "template string"  
   status:
     project: yes
     patch: yes
@@ -15,4 +21,5 @@ coverage:
     - external/*
 comment:
   layout: "header, diff, changes"
+
 behavior: default
