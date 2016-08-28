@@ -6,6 +6,7 @@
 [![Coverity Scan Build Status](https://scan.coverity.com/projects/10011/badge.svg)](https://scan.coverity.com/projects/cb-geo-lbmdem)
 [![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](http://cb-geo.github.io/lbmdem)
 [![Coverage Status](https://coveralls.io/repos/github/cb-geo/lbmdem/badge.svg?branch=develop)](https://coveralls.io/github/cb-geo/lbmdem?branch=develop)
+[![codecov.io](http://codecov.io/github/cb-geo/lbmdem/coverage.svg?branch=develop)](http://codecov.io/github/cb-geo/lbmdem?branch=develop)
 
 
 ## Install dependencies
