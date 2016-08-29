@@ -28,10 +28,20 @@ class lbmdem::LbNode {
     // Check if the dimension is between 2 or 3
     static_assert((Tdim == 2 || Tdim == 3), "Invalid global dimension");
     coordinates_ = coord;
+    isfluid_ = true;
   };
 
-  //! Destructor
-  ~LbNode(){};
+  // Constructor with id, coordinates and state
+  //! \param[in] id Node id
+  //! \param[in] coord Nodal coordinates
+  //! \param[in] state State of the LB node (Solid, Fluid or Gas)
+  LbNode(const lbmdem::Lint& id, const std::array<lbmdem::Lint, Tdim>& coord,
+         bool isfluid)
+      : id_{id}, isfluid_{isfluid} {
+    // Check if the dimension is between 2 or 3
+    static_assert((Tdim == 2 || Tdim == 3), "Invalid global dimension");
+    coordinates_ = coord;
+  };
 
   //! Return id of the node
   lbmdem::Lint id() const { return id_; }
@@ -46,6 +56,12 @@ class lbmdem::LbNode {
   //! \param[out] coordinates_ return coordinates of the node
   std::array<lbmdem::Lint, Tdim> coordinates() const { return coordinates_; }
 
+  //! Update fluid / solid state of the node
+  void isfluid(const bool status) { isfluid_ = status; }
+
+  //!  (Solid, Fluid, Gas) of the LB node
+  bool isfluid() const { return isfluid_; }
+
  private:
   //! Restict Copy constructor
   LbNode(const LbNode<Tdim>&);
@@ -59,6 +75,9 @@ class lbmdem::LbNode {
 
   //! LB nodal coordinates
   std::array<lbmdem::Lint, Tdim> coordinates_;
+
+  //! Solid or fluid node
+  bool isfluid_;
 };
 
 #endif  // LBMDEM_LBM_NODE_H_

@@ -82,6 +82,9 @@ matrix:
     # Coversall and codecov
     - os: linux
       compiler: gcc
+      branches:
+        only:
+          - coverity_scan
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']

@@ -17,6 +17,7 @@ lbmdem_SOURCES 	= src/main.cc
 check_PROGRAMS  = lbmdemtest
 
 lbmdemtest_SOURCES = tests/test.cc \
-                     tests/lb_node_test.cc
+                     tests/lb_node_2d_test.cc \
+                     tests/lb_node_3d_test.cc
 
 

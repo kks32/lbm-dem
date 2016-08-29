@@ -7,6 +7,9 @@ coverage:
   round: down # default down|up|nearest
   range: 70...90 # default 70...90. red...green
 
+  ignore: # files and folders for processing
+    - external/*
+
   notify:
     slack:
       default:
@@ -16,5 +19,3 @@ coverage:
         attachments: "sunburst, diff" 
         message: "Coverage analysis"
 
-  ignore: # files and folders for processing
-    - external/*
