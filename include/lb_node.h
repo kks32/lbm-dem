@@ -61,4 +61,4 @@ class lbmdem::LbNode {
   std::array<lbmdem::Lint, Tdim> coordinates_;
 };
 
-#endif // LBMDEM_LBM_NODE_H_
+#endif  // LBMDEM_LBM_NODE_H_

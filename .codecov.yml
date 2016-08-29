@@ -1,25 +1,20 @@
 # Codecov.io configuration
+codecov:
+  branch: develop  # override the default branch
+
 coverage:
-  precision: 2
-  round: down
-  range: "70...100"
+  precision: 2  # 2 = xx.xx%, 0 = xx%
+  round: down # default down|up|nearest
+  range: 70...90 # default 70...90. red...green
+
   notify:
-    require_ci_to_pass: yes
     slack:
       default:
         url: "https://hooks.slack.com/services/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"
         branches: lbmdem              
         threshold: 1%
         attachments: "sunburst, diff" 
-        message: "template string"  
-  status:
-    project: yes
-    patch: yes
-    changes: yes
+        message: "Coverage analysis"
 
   ignore: # files and folders for processing
     - external/*
-comment:
-  layout: "header, diff, changes"
-
-behavior: default
