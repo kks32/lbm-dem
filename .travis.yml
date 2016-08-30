@@ -117,7 +117,7 @@ script:
     - cd build
     - cmake ..
     - make
-    - make test
+    - ctest -VV -S
 
 notifications:
   slack:
