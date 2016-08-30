@@ -8,24 +8,41 @@ cmake_minimum_required(VERSION 3.1)
 SET(CMAKE_COLOR_MAKEFILE ON)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
 
-add_executable(lbmdem src/main.cc)
-
-add_executable(lb_node_2d tests/lb_node_2d_test.cc)
-add_executable(lb_node_3d tests/lb_node_3d_test.cc)
-
-add_test(NAME lb_node_2d COMMAND $<TARGET_FILE:lb_node_2d>)
-add_test(NAME lb_node_3d COMMAND $<TARGET_FILE:lb_node_3d>)
-
-# LBM-DEM settings
-OPTION(USE_DOUBLE_PRECISION "Use double precision" ON)
-
-enable_testing()
-
+# General compile settings
 IF (NOT CMAKE_BUILD_TYPE)
  SET(CMAKE_BUILD_TYPE "Debug")
  #SET(CMAKE_BUILD_TYPE "Release")
 ENDIF (NOT CMAKE_BUILD_TYPE)
 
+
+# LBM-DEM settings
+OPTION(USE_DOUBLE_PRECISION "Use double precision" ON)
+
+# LBMDEM executable
+SET(lbm_src
+    src/main.cc
+)
+
+add_executable(lbmdem
+               ${lbm_src}
+)
+
+# Unit test
+SET(test_src
+    tests/test.cc
+    tests/lb_node_2d_test.cc
+    tests/lb_node_3d_test.cc
+)
+    
+add_executable(lbmdemtest
+	       ${test_src}
+)
+
+add_test(NAME lbmdemtest COMMAND $<TARGET_FILE:lbmdemtest>)
+
+enable_testing()
+
+# Include directories
 include_directories(
   ${lbmdem_SOURCE_DIR}/include
   ${lbmdem_SOURCE_DIR}/external
