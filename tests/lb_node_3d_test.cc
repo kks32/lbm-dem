@@ -1,6 +1,7 @@
 // Nodebase test
 #include <limits>
 
+#define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 
 #include "lb_node.h"

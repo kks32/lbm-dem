@@ -9,9 +9,12 @@ SET(CMAKE_COLOR_MAKEFILE ON)
 SET(CMAKE_VERBOSE_MAKEFILE OFF)
 
 add_executable(lbmdem src/main.cc)
-add_executable(lbmdemtest tests/test.cc tests/lb_node_2d_test.cc tests/lb_node_3d_test.cc)
 
-add_test(NAME lbmdemtest COMMAND $<TARGET_FILE:lbmdemtest>)
+add_executable(lb_node_2d tests/lb_node_2d_test.cc)
+add_executable(lb_node_3d tests/lb_node_3d_test.cc)
+
+add_test(NAME lb_node_2d COMMAND $<TARGET_FILE:lb_node_2d>)
+add_test(NAME lb_node_3d COMMAND $<TARGET_FILE:lb_node_3d>)
 
 # LBM-DEM settings
 OPTION(USE_DOUBLE_PRECISION "Use double precision" ON)
