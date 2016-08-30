@@ -1,10 +1,10 @@
 #ifndef LBMDEM_LB_NODE_H_
 #define LBMDEM_LB_NODE_H_
 
+#include <algorithm>
 #include <array>
 #include <iostream>
 #include <limits>
-#include <vector>
 
 #include "settings.h"
 
@@ -29,6 +29,8 @@ class lbmdem::LbNode {
     static_assert((Tdim == 2 || Tdim == 3), "Invalid global dimension");
     coordinates_ = coord;
     isfluid_ = true;
+    std::fill(force_.begin(), force_.end(),
+              std::numeric_limits<lbmdem::Real>::quiet_NaN());
   };
 
   // Constructor with id, coordinates and state
@@ -62,6 +64,12 @@ class lbmdem::LbNode {
   //!  (Solid, Fluid, Gas) of the LB node
   bool isfluid() const { return isfluid_; }
 
+  //! Assign force
+  void force(const std::array<lbmdem::Real, Tdim>& force) { force_ = force; }
+
+  //! Return force
+  std::array<lbmdem::Real, Tdim> force() const { return force_; }
+
  private:
   //! Restict Copy constructor
   LbNode(const LbNode<Tdim>&);
@@ -78,6 +86,9 @@ class lbmdem::LbNode {
 
   //! Solid or fluid node
   bool isfluid_;
+
+  //! Force
+  std::array<lbmdem::Real, Tdim> force_;
 };
 
 #endif  // LBMDEM_LB_NODE_H_

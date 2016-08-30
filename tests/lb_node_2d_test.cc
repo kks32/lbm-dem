@@ -74,6 +74,25 @@ TEST_CASE("LB node is checked for 2D case with id & coordinates",
     node->isfluid(false);
     REQUIRE(node->isfluid() == false);
   }
+
+  //! Test state of lb node
+  SECTION("Force in LB node is checked") {
+    lbmdem::Lint id = 0;
+    auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+    auto force = node->force();
+    REQUIRE(force.size() == Dim);
+    for (auto fcomponent : force)
+      REQUIRE(std::isnan(fcomponent) == true);
+
+    std::array<lbmdem::Real, Dim> force_test = {
+        -1. * std::numeric_limits<lbmdem::Real>::max(),
+        std::numeric_limits<lbmdem::Real>::max()};
+    node->force(force_test);
+    force = node->force();
+    REQUIRE(force.size() == force_test.size());
+    for (unsigned i = 0; i < force_test.size(); ++i)
+      REQUIRE(force.at(i) == force_test.at(i));
+  }
 }
 
 //! \brief Check LB node class for 2D case
@@ -119,5 +138,24 @@ TEST_CASE("LB node is checked for 2D case with id, coordinates and isfluid",
         REQUIRE(coordinates.at(i) == coords.at(i));
       REQUIRE(coordinates.size() == Dim);
     }
+  }
+
+  //! Test state of lb node
+  SECTION("Force in LB node is checked") {
+    lbmdem::Lint id = 0;
+    auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+    auto force = node->force();
+    REQUIRE(force.size() == Dim);
+    for (auto fcomponent : force)
+      REQUIRE(std::isnan(fcomponent) == true);
+
+    std::array<lbmdem::Real, Dim> force_test = {
+        -1. * std::numeric_limits<lbmdem::Real>::max(),
+        std::numeric_limits<lbmdem::Real>::max()};
+    node->force(force_test);
+    force = node->force();
+    REQUIRE(force.size() == force_test.size());
+    for (unsigned i = 0; i < force_test.size(); ++i)
+      REQUIRE(force.at(i) == force_test.at(i));
   }
 }
