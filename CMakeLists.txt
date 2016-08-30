@@ -27,3 +27,7 @@ include_directories(
   ${lbmdem_SOURCE_DIR}/include
   ${lbmdem_SOURCE_DIR}/external
 )
+
+if (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive")
+endif()
