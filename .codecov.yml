@@ -14,7 +14,7 @@ coverage:
     slack:
       default:
         url: "https://hooks.slack.com/services/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"
-        branches: lbmdem              
+        branches: coverity_scan              
         threshold: 1%
         attachments: "sunburst, diff" 
         message: "Coverage analysis"

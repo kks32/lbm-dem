@@ -83,21 +83,41 @@ TEST_CASE("LB node is checked for 2D case with id, coordinates and isfluid",
   lbmdem::Lint id = 0;
   std::array<lbmdem::Lint, Dim> coords = {{0}};
 
-    //! Test state of lb node
+  //! Test state of lb node
   SECTION("State of LB node is checked for fluid") {
     auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords, true);
     REQUIRE(node->isfluid() == true);
-
     node->isfluid(false);
     REQUIRE(node->isfluid() == false);
+
+    //! Check if node id is zero
+    SECTION("Node id is zero") { REQUIRE(node->id() == 0); }
+
+    //! Check for coordinates being zero
+    SECTION("coordinates function is checked") {
+      auto coordinates = node->coordinates();
+      for (unsigned i = 0; i < coordinates.size(); ++i)
+        REQUIRE(coordinates.at(i) == coords.at(i));
+      REQUIRE(coordinates.size() == Dim);
+    }
   }
 
-      //! Test state of lb node
+  //! Test state of lb node
   SECTION("State of LB node is checked for solid") {
     auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords, false);
     REQUIRE(node->isfluid() == false);
 
     node->isfluid(true);
     REQUIRE(node->isfluid() == true);
+    //! Check if node id is zero
+    SECTION("Node id is zero") { REQUIRE(node->id() == 0); }
+
+    //! Check for coordinates being zero
+    SECTION("coordinates function is checked") {
+      auto coordinates = node->coordinates();
+      for (unsigned i = 0; i < coordinates.size(); ++i)
+        REQUIRE(coordinates.at(i) == coords.at(i));
+      REQUIRE(coordinates.size() == Dim);
+    }
   }
 }

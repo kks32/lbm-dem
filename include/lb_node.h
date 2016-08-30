@@ -1,5 +1,5 @@
-#ifndef LBMDEM_LBM_NODE_H_
-#define LBMDEM_LBM_NODE_H_
+#ifndef LBMDEM_LB_NODE_H_
+#define LBMDEM_LB_NODE_H_
 
 #include <array>
 #include <iostream>
@@ -80,4 +80,4 @@ class lbmdem::LbNode {
   bool isfluid_;
 };
 
-#endif  // LBMDEM_LBM_NODE_H_
+#endif  // LBMDEM_LB_NODE_H_

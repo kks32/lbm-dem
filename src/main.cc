@@ -1,6 +1,8 @@
 #include <iostream>
 #include <memory>
 
+#include "daqb.h"
+#include "factory.h"
 #include "lb_node.h"
 #include "settings.h"
 
