@@ -109,20 +109,15 @@ matrix:
         - SPECIAL=codecoverage
 
 ################
-# before script #
-################
-before_script:
-    - aclocal -I ./m4 && autoconf && automake --add-missing
-
-################
 # build script #
 ################
 
 script:
-    - ./configure 
-    - make clean && make check
-    - ./lbmdem
-    - ./lbmdemtest
+    - mkdir build
+    - cd build
+    - cmake ..
+    - make
+    - make test
 
 notifications:
   slack:
