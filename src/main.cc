@@ -1,7 +1,7 @@
 #include <iostream>
 #include <memory>
 
-#include "daqb.h"
+#include "lattice.h"
 #include "factory.h"
 #include "lb_node.h"
 #include "settings.h"

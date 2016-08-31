@@ -30,7 +30,7 @@ add_executable(lbmdem
 # Unit test
 SET(test_src
     tests/test.cc
-    tests/daqb_test.cc
+    tests/lattice_test.cc
     tests/lb_node_2d_test.cc
     tests/lb_node_3d_test.cc
 )

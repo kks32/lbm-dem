@@ -1,5 +1,5 @@
-#ifndef LBMDEM_DAQB_H_
-#define LBMDEM_DAQB_H_
+#ifndef LBMDEM_LATTICE_H_
+#define LBMDEM_LATTICE_H_
 
 #include <algorithm>
 #include <array>
@@ -9,18 +9,18 @@
 
 namespace lbmdem {
 template <unsigned Tdim, unsigned Tdir>
-class DaQb;
+class Lattice;
 }
 
-//! Abstract DaQb base class
-//! \brief Base class that stores the information about DaQb model
+//! Abstract Lattice base class
+//! \brief Base class that stores the information about Lattice model
 //! \tparam Tdim Dimension
 //! \tparam Tdir Number of discrete velocity directions
 template <unsigned Tdim, unsigned Tdir>
-class lbmdem::DaQb {
+class lbmdem::Lattice {
  public:
   //! \brief Constructor
-  DaQb();
+  Lattice();
 
   //! Return weights
   std::array<lbmdem::Real, Tdir> weights() const { return weights_; }
@@ -32,10 +32,10 @@ class lbmdem::DaQb {
 
  private:
   //! Restict Copy constructor
-  DaQb(const DaQb&);
+  Lattice(const Lattice&);
 
   //! Restict Assignment operator
-  DaQb& operator=(const DaQb&);
+  Lattice& operator=(const Lattice&);
 
   //! Weights
   std::array<lbmdem::Real, Tdir> weights_;
@@ -43,6 +43,6 @@ class lbmdem::DaQb {
   std::array<std::array<int, Tdir>, Tdim> velocities_;
 };
 
-#include "daqb.tcc"
+#include "lattice.tcc"
 
-#endif  // LBMDEM_DAQB_H_
+#endif  // LBMDEM_LATTICE_H_

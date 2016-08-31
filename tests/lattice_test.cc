@@ -4,16 +4,16 @@
 
 #include "catch.hpp"
 
-#include "daqb.h"
+#include "lattice.h"
 #include "settings.h"
 
 //! \brief Check 3D model D3Q19 case
-TEST_CASE("D3Q19 model is checked", "[D3Q19][3D][lbm]") {
+TEST_CASE("D3Q19 model is checked", "[3D][LBM][D3Q19][Lattice]") {
   const unsigned Dim = 3;
   const unsigned Dir = 19;
   const lbmdem::Real Tolerance = 1.E-16;
 
-  auto d3q19 = std::make_shared<lbmdem::DaQb<Dim, Dir>>();
+  auto d3q19 = std::make_shared<lbmdem::Lattice<Dim, Dir>>();
 
   //! Check weights
   SECTION("Weights are checked") {

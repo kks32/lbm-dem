@@ -1,9 +1,9 @@
-// D3Q19
+// D3Q19 Lattice
 
 //! \brief Constructor with relaxation parameter
 //! \param[in] tau_ Relaxation parameter $\tau$
 template <>
-lbmdem::DaQb<3, 19>::DaQb() {
+lbmdem::Lattice<3, 19>::Lattice() {
   //! LBM weights
   const lbmdem::Real w0 = 1. / 3.;
   const lbmdem::Real w1 = 1. / 18.;

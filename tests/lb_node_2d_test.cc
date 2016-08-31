@@ -8,7 +8,7 @@
 
 //! \brief Check LB node class for 2D case
 TEST_CASE("LB node is checked for 2D case with id & coordinates",
-          "[lbnode][2D]") {
+          "[2D][LBM][lbnode]") {
   const unsigned Dim = 2;
   std::array<lbmdem::Lint, Dim> coords = {{0}};
 
@@ -97,7 +97,7 @@ TEST_CASE("LB node is checked for 2D case with id & coordinates",
 
 //! \brief Check LB node class for 2D case
 TEST_CASE("LB node is checked for 2D case with id, coordinates and isfluid",
-          "[lbnode][2D]") {
+          "[2D][LBM][lbnode]") {
   const unsigned Dim = 2;
   lbmdem::Lint id = 0;
   std::array<lbmdem::Lint, Dim> coords = {{0}};
