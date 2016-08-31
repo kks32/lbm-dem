@@ -48,12 +48,6 @@ class lbmdem::LbNode {
   //! Return id of the node
   lbmdem::Lint id() const { return id_; }
 
-  //! Assign coordinates
-  //! \param[in] coord Assign coord as coordinates of the node
-  void coordinates(const std::array<lbmdem::Lint, Tdim>& coord) {
-    coordinates_ = coord;
-  }
-
   //! Return coordinates
   //! \param[out] coordinates_ return coordinates of the node
   std::array<lbmdem::Lint, Tdim> coordinates() const { return coordinates_; }

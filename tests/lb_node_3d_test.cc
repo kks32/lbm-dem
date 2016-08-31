@@ -36,36 +36,38 @@ TEST_CASE("LB node is checked for 3D case with id & coordinates",
   //! Test coordinates function
   SECTION("coordinates function is checked") {
     lbmdem::Lint id = 0;
-
-    auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
-
     //! Check for coordinates being zero
-    auto coordinates = node->coordinates();
-    for (unsigned i = 0; i < coordinates.size(); ++i)
-      REQUIRE(coordinates.at(i) == coords.at(i));
-
-    REQUIRE(coordinates.size() == Dim);
+    SECTION("Coordinates are zero") {
+      auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+      auto coordinates = node->coordinates();
+      for (unsigned i = 0; i < coordinates.size(); ++i)
+        REQUIRE(coordinates.at(i) == coords.at(i));
+      REQUIRE(coordinates.size() == Dim);
+    }
 
     //! Check for negative value of coordinates
-    for (auto &coord : coords)
-      coord = -1. * std::numeric_limits<lbmdem::Lint>::max();
+    SECTION("Coordinates are negative values") {
+      for (auto &coord : coords)
+        coord = -1. * std::numeric_limits<lbmdem::Lint>::max();
+      auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+      auto coordinates = node->coordinates();
+      for (unsigned i = 0; i < coordinates.size(); ++i)
+        REQUIRE(coordinates.at(i) == coords.at(i));
 
-    node->coordinates(coords);
-    coordinates = node->coordinates();
-    for (unsigned i = 0; i < coordinates.size(); ++i)
-      REQUIRE(coordinates.at(i) == coords.at(i));
-
-    REQUIRE(coordinates.size() == Dim);
+      REQUIRE(coordinates.size() == Dim);
+    }
 
     //! Check for positive value of coordinates
-    for (auto &coord : coords)
-      coord = std::numeric_limits<lbmdem::Lint>::max();
-    node->coordinates(coords);
-    coordinates = node->coordinates();
-    for (unsigned i = 0; i < coordinates.size(); ++i)
-      REQUIRE(coordinates.at(i) == coords.at(i));
+    SECTION("Coordinates are positive values") {
+      for (auto &coord : coords)
+        coord = std::numeric_limits<lbmdem::Lint>::max();
+      auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+      auto coordinates = node->coordinates();
+      for (unsigned i = 0; i < coordinates.size(); ++i)
+        REQUIRE(coordinates.at(i) == coords.at(i));
 
-    REQUIRE(coordinates.size() == Dim);
+      REQUIRE(coordinates.size() == Dim);
+    }
   }
 
   //! Test state of lb node
