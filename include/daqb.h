@@ -19,14 +19,16 @@ class DaQb;
 template <unsigned Tdim, unsigned Tdir>
 class lbmdem::DaQb {
  public:
-  //! \brief Constructor with relaxation parameter
-  DaQb(const lbmdem::Real& tau);
-
-  //! Return velocities
-  std::array<lbmdem::Real, Tdir> velocities() const { return velocities_; }
+  //! \brief Constructor
+  DaQb();
 
   //! Return weights
-  std::array<std::array<int, Tdir>, Tdim> weights() const { return weights_; }
+  std::array<lbmdem::Real, Tdir> weights() const { return weights_; }
+
+  //! Return velocities
+  std::array<std::array<int, Tdir>, Tdim> velocities() const {
+    return velocities_;
+  }
 
  private:
   //! Restict Copy constructor
@@ -35,8 +37,6 @@ class lbmdem::DaQb {
   //! Restict Assignment operator
   DaQb& operator=(const DaQb&);
 
-  //! Relaxation parameter - Tau
-  lbmdem::Real tau_;
   //! Weights
   std::array<lbmdem::Real, Tdir> weights_;
   //! Velocities
