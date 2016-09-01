@@ -95,7 +95,7 @@ matrix:
         - sudo make -C lcov-1.11/ install
         - gem install coveralls-lcov
       after_success:
-        - cmake CMakeLists.txt -DENABLE_COVERAGE=ON
+        - cmake ../CMakeLists.txt -DENABLE_COVERAGE=ON
         - make
         - coveralls --build-root test --exclude external/catch.hpp --include src/* --include include/* --gcov-options '\-lp' --gcov 'gcov-4.9'
         - lcov --directory src --directory include --directory tests --capture --output-file coverage.info --rc lcov_branch_coverage=1 --no-external
