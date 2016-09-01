@@ -43,3 +43,4 @@ doc/*
 *.swp*
 lbmdem
 lbmdemtest
+lcov/*

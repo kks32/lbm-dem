@@ -1,0 +1,3 @@
+[submodule "external/cmake-codecov"]
+	path = external/cmake-codecov
+	url = git://github.com/RWTH-ELP/CMake-codecov.git
