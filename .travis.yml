@@ -8,6 +8,8 @@ language: cpp
 dist: trusty
 sudo: required
 
+git:
+  submodules: false
 
 ###################
 # global settings #
