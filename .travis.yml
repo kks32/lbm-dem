@@ -119,6 +119,12 @@ matrix:
         - valgrind --error-exitcode=1 --leak-check=full ./lbmdemtest
         - cd .. && cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
 
+    # OSX / Clang
+    - os: osx
+      osx_image: xcode7.3
+
+    - os: osx
+      osx_image: xcode8
 
 ################
 # build script #
