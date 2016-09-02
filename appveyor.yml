@@ -12,7 +12,6 @@ notifications:
 - provider: Slack
   incoming_webhook: https://hooks.slack.com/services/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
   channel: lbmdem
-  template: 'Windows build of `lbmdem`:'
   on_build_success: true
   on_build_failure: true
   on_build_status_changed: true
