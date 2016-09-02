@@ -51,7 +51,7 @@ enable_testing()
 
 
 # Coverage
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/external/cmake-codecov/cmake" ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 find_package(codecov)
 add_coverage(lbmdem)
 add_coverage(lbmdemtest)
