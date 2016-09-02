@@ -56,5 +56,6 @@ endif()
 # Coverage
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/external/cmake-codecov/cmake" ${CMAKE_MODULE_PATH})
 find_package(codecov)
+add_coverage(lbmdem)
 add_coverage(lbmdemtest)
 
