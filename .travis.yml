@@ -8,6 +8,8 @@ language: cpp
 dist: trusty
 sudo: required
 
+git:
+  submodules: false
 
 ###################
 # global settings #
@@ -72,14 +74,14 @@ matrix:
             name: "cb-geo/lbmdem"
             description: "LBM-DEM Coverity scan build submitted via Travis CI"
           notification_email: cued.geomechanics@gmail.com
-          build_command_prepend: "./configure; make clean"
-          build_command:   "make -j 4"
+          build_command_prepend: "cmake .. && make clean"
+          build_command:   "make"
           branch_pattern: coverity_scan
       env:
         - COMPILER=g++-5
         - SPECIAL=coverity
     
-    # Coversall and codecov
+    # Codecov
     - os: linux
       compiler: gcc
       addons:
@@ -102,19 +104,21 @@ matrix:
         - COMPILER=g++-4.9
         - SPECIAL=codecoverage
 
-  # Valgrind
+    # Valgrind and cppcheck
+    - os: linux
+      compiler: gcc
+      env:
+        - COMPILER=g++-4.9
+        - SPECIAL=valgrind
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-4.9', 'cppcheck', 'valgrind']
+      after_success:
+        - valgrind --error-exitcode=1 --leak-check=full ./lbmdem
+        - valgrind --error-exitcode=1 --leak-check=full ./lbmdemtest
+        - cd .. && cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
 
-  - os: linux
-    compiler: gcc
-    env:
-      - COMPILER=g++-4.9
-      - SPECIAL=valgrind
-    addons:
-      apt:
-        sources: ['ubuntu-toolchain-r-test']
-        packages: [g++-4.9, valgrind]
-    after_success:
-- valgrind --error-exitcode=1 --leak-check=full
 
 ################
 # build script #
