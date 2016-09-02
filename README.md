@@ -18,7 +18,7 @@
 
 ## Compile and Run
 
-0. Run `mkdir build && cd build && cmake .. && cd ..`
+0. Run `mkdir build && cd build && cmake ..`
 
 1. Run `make clean && make -jN` (where N is the number of cores)
 
