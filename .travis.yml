@@ -102,7 +102,7 @@ matrix:
         - COMPILER=g++-4.9
         - SPECIAL=codecoverage
 
-    # Valgrind
+    # Valgrind and cppcheck
     - os: linux
       compiler: gcc
       env:
@@ -111,10 +111,11 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.9', 'valgrind']
+          packages: ['g++-4.9', 'cppcheck', 'valgrind']
       after_success:
         - valgrind --error-exitcode=1 --leak-check=full ./lbmdem
         - valgrind --error-exitcode=1 --leak-check=full ./lbmdemtest
+        - cd .. && cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
 
 
 ################
