@@ -128,6 +128,7 @@ matrix:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-trusty-3.7
           packages:
+            - clang-3.5
             - clang-3.7
       env: 
         - COMPILER=clang++-3.7
