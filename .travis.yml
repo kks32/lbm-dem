@@ -120,27 +120,10 @@ matrix:
         - cd .. && cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
 
     # Clang static analysis
-    - compiler: clang
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.7
-          packages:
-            - clang-3.7
-      env: COMPILER=clang++-3.7
-      standalone_tests:
-        - ASAN="ON"
-        - MSAN="ON"
-        - TSAN="ON"
-        - UBSAN="ON"
-        - STATIC_ANALYZER="ON"
-        - CLANG_FORMAT="ON"
-        - CLANG_TIDY="ON"
-      after_success:
-        - scan-build cmake -DCMAKE_CXX_COMPILER=clang++ ..
-        - scan-build make
-
+    - os: linux
+      compiler: clang
+      env: 
+        - CONFIG=scan-build
 
     # OSX / Clang
     - os: osx
