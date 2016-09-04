@@ -129,6 +129,14 @@ matrix:
           packages:
             - clang-3.7
       env: COMPILER=clang++-3.7
+      standalone_tests:
+        - ASAN="ON"
+        - MSAN="ON"
+        - TSAN="ON"
+        - UBSAN="ON"
+        - STATIC_ANALYZER="ON"
+        - CLANG_FORMAT="ON"
+        - CLANG_TIDY="ON"
       after_success:
         - scan-build cmake -DCMAKE_CXX_COMPILER=clang++ ..
         - scan-build make
