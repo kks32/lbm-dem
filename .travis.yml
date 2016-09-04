@@ -133,8 +133,14 @@ matrix:
       env: 
         - COMPILER=clang++-3.7
         - CONFIG=scan-build
+        - ASAN="ON"
+        - MSAN="ON"
+        - TSAN="ON"
+        - UBSAN="ON"
+        - STATIC_ANALYZER="ON"
+        - CLANG_FORMAT="ON"
+        - CLANG_TIDY="ON"
       after_success:
-        - scan-build
         - scan-build cmake ..
         - scan-build make
 
