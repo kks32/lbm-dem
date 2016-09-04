@@ -5,7 +5,7 @@
 # C++ project
 language: cpp
 
-dist: precise
+dist: trusty
 sudo: required
 
 git:
