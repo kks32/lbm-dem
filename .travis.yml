@@ -47,7 +47,7 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.6
+            - llvm-toolchain-trusty-3.6
           packages:
             - clang-3.6
       env: COMPILER=clang++-3.6
@@ -56,10 +56,10 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.9
+            - llvm-toolchain-trusty-3.7
           packages:
-            - clang-3.9
-      env: COMPILER=clang++-3.9
+            - clang-3.7
+      env: COMPILER=clang++-3.7
 
     # Coverity scan 
     - os: linux
@@ -126,10 +126,11 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.9
+            - llvm-toolchain-trusty-3.7
           packages:
-            - clang-3.9
+            - clang-3.7
       env: 
+        - COMPILER=clang++-3.7
         - CONFIG=scan-build
       after_success:
         - scan-build cmake ..
