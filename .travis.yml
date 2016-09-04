@@ -119,6 +119,21 @@ matrix:
         - valgrind --error-exitcode=1 --leak-check=full ./lbmdemtest
         - cd .. && cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
 
+    # Clang static analysis
+    - compiler: clang
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.7
+          packages:
+            - clang-3.7
+      env: COMPILER=clang++-3.7
+      after_success:
+        - scan-build cmake -DCMAKE_CXX_COMPILER=clang++ ..
+        - scan-build make
+
+
     # OSX / Clang
     - os: osx
       osx_image: xcode7.3
