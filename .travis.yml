@@ -56,10 +56,10 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.7
+            - llvm-toolchain-precise-3.9
           packages:
-            - clang-3.7
-      env: COMPILER=clang++-3.7
+            - clang-3.9
+      env: COMPILER=clang++-3.9
 
     # Coverity scan 
     - os: linux
@@ -122,6 +122,13 @@ matrix:
     # Clang static analysis
     - os: linux
       compiler: clang
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.9
+          packages:
+            - clang-3.9
       env: 
         - CONFIG=scan-build
       after_success:
