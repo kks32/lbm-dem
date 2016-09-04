@@ -124,6 +124,9 @@ matrix:
       compiler: clang
       env: 
         - CONFIG=scan-build
+      after_success:
+        - scan-build cmake ..
+        - scan-build make
 
     # OSX / Clang
     - os: osx
