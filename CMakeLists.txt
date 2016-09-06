@@ -22,6 +22,13 @@ endif()
 # LBM-DEM settings
 OPTION(USE_DOUBLE_PRECISION "Use double precision" ON)
 
+# CMake Modules
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+
+# Eigen
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
+
 # Include directories
 include_directories(
   ${lbmdem_SOURCE_DIR}/include
@@ -49,9 +56,7 @@ add_executable(lbmdemtest
 add_test(NAME lbmdemtest COMMAND $<TARGET_FILE:lbmdemtest>)
 enable_testing()
 
-
 # Coverage
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 find_package(codecov)
 add_coverage(lbmdem)
 add_coverage(lbmdemtest)
