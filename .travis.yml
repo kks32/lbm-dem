@@ -21,11 +21,20 @@ env:
    #   via the "travis encrypt" command using the project repo's public key
   - secure: "j3gxQHpmALWW1VYvX2+rv/xJ2H32W0SQXkyY83PY/PJxphuiIxWtSAM6wn0SWgBBKIi/1IAUU7xiEQewodkMXB0hjLxUDEsr7nhONPxkdFmgM4nOuqDmR2XJPACpWZV8H1aDxl37vYeWCIio0o2Q1TxtCFz4cENpVmbfuGnq3RCdDWkiwvzQqnXmk0Ac8hRS6KrWwBGOeoCFiR7+/wf0/6lYZZB+KBY7Vjuc40Zv3KZIH4tDfokrQDBmXluV4pQiPc1yz7xy180HNs2pRSTlEfknKGm/Go/wnEVu+OiEugVNt/mP1PRFV52+QuKnjqjOkrtlnEM5al/tza/PAyNdGOEoowAyjMJ8gOIw0NUWXIFZ8EQ0cvgVpLq2Azaamiq43wCVRrH7Ybg7lAVZt8+aQz7CsSbq08qS+OjxRijKxZ4pSRcYoeyXWmZ9K2rRyrJUQTE/v5i0EEgOdFwInxeOxlAgrHu1FhF9gAY+Bgb+O7XPFZTnkHkJlVghk+/mTHLVJpJ03t9gdYrqrENH7m2VfeE+q5zjxRuejLzWzrH5fSJewc3E4IUQqiJfM3NcS7Ra+p5ToRyhm/bnYJotptW6PAV2rJUK3PvLL+uLkSooHDoT/wRi9PvgKzSuXcs0pW7w0Uep0VlpJBzuMi3plI9pY/QDjnIlWwCzRCByWQ3wFsY="
 
+##################
+# Before install #
+##################
+before_install:
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq libeigen3-dev
+
 ################
 # build matrix #
 ################
 matrix:
   include:
+    # GCC 4.9
     - compiler: gcc
       addons:
         apt:
@@ -34,15 +43,20 @@ matrix:
           packages:
             - g++-4.9
       env: COMPILER=g++-4.9
+
+    # Clang GCC 5
     - compiler: gcc
+      env: COMPILER=g++-5
       addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
           packages:
             - g++-5
-      env: COMPILER=g++-5
+
+    # Clang 3.6
     - compiler: clang
+      env: COMPILER=clang++-3.6
       addons:
         apt:
           sources:
@@ -50,8 +64,10 @@ matrix:
             - llvm-toolchain-trusty-3.6
           packages:
             - clang-3.6
-      env: COMPILER=clang++-3.6
+
+    # Clang 3.7
     - compiler: clang
+      env: COMPILER=clang++-3.7
       addons:
         apt:
           sources:
@@ -59,35 +75,35 @@ matrix:
             - llvm-toolchain-trusty-3.7
           packages:
             - clang-3.7
-      env: COMPILER=clang++-3.7
 
     # Coverity scan 
-    - os: linux
-      compiler: gcc
+    - compiler: gcc
+      env:
+        - COMPILER=g++-5
+        - SPECIAL=coverity
       before_install: echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5', 'valgrind']
+          packages: ['g++-5', 'valgrind', 'libeigen3-dev']
         coverity_scan:
           project:
             name: "cb-geo/lbmdem"
             description: "LBM-DEM Coverity scan build submitted via Travis CI"
           notification_email: cued.geomechanics@gmail.com
-          build_command_prepend: "cmake .. && make clean"
+          build_command_prepend: "cmake ."
           build_command:   "make"
           branch_pattern: coverity_scan
+   
+    # Codecov
+    - compiler: gcc
       env:
         - COMPILER=g++-5
-        - SPECIAL=coverity
-    
-    # Codecov
-    - os: linux
-      compiler: gcc
+        - SPECIAL=codecoverage
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.9', 'ruby']
+          packages: ['g++-5', 'ruby']
       before_script:
         - wget http://ftp.de.debian.org/debian/pool/main/l/lcov/lcov_1.11.orig.tar.gz
         - tar xf lcov_1.11.orig.tar.gz
@@ -100,20 +116,17 @@ matrix:
         - make gcov
         - make lcov
         - bash <(curl -s https://codecov.io/bash) -X gcov
-      env:
-        - COMPILER=g++-4.9
-        - SPECIAL=codecoverage
+
 
     # Valgrind and cppcheck
-    - os: linux
-      compiler: gcc
+    - compiler: gcc
       env:
-        - COMPILER=g++-4.9
+        - COMPILER=g++-5
         - SPECIAL=valgrind
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.9', 'cppcheck', 'valgrind']
+          packages: ['g++-5', 'cppcheck', 'valgrind']
       after_success:
         - valgrind --error-exitcode=1 --leak-check=full ./lbmdem
         - valgrind --error-exitcode=1 --leak-check=full ./lbmdemtest
@@ -147,9 +160,15 @@ matrix:
     # OSX / Clang
     - os: osx
       osx_image: xcode7.3
+      before_install:
+        - brew update
+        - brew install eigen
 
     - os: osx
       osx_image: xcode8
+      before_install:
+        - brew update
+        - brew install eigen
 
 ################
 # build script #
@@ -159,7 +178,7 @@ script:
     - mkdir build
     - cd build
     - cmake ..
-    - make
+    - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make ; fi
     - ctest -VV -S
 
 notifications:
