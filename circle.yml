@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /home/cbgeo/
+    working_directory: /home/cbgeo/research/lbmdem
     docker:
       - image: cbgeo/lbmdem
     steps:
