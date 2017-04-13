@@ -41,12 +41,12 @@ add_executable(lbmdem
 # Unit test
 SET(test_src
     tests/test.cc
-#    tests/model_test.cc
+    tests/model_test.cc
     tests/lb_node_2d_test.cc
     tests/lb_node_3d_test.cc
-)   
+)
 add_executable(lbmdemtest
-	       ${test_src}
+               ${test_src}
 )
 add_test(NAME lbmdemtest COMMAND $<TARGET_FILE:lbmdemtest>)
 enable_testing()
