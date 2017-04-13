@@ -10,8 +10,7 @@ SET(CMAKE_VERBOSE_MAKEFILE OFF)
 
 # General compile settings
 IF (NOT CMAKE_BUILD_TYPE)
- SET(CMAKE_BUILD_TYPE "Debug")
- #SET(CMAKE_BUILD_TYPE "Release")
+  SET(CMAKE_BUILD_TYPE "RelWithDebInfo")
 ENDIF (NOT CMAKE_BUILD_TYPE)
 
 # GNU Specific settings
@@ -24,10 +23,6 @@ OPTION(USE_DOUBLE_PRECISION "Use double precision" ON)
 
 # CMake Modules
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
-
-# Eigen
-find_package(Eigen3 REQUIRED)
-include_directories(${EIGEN3_INCLUDE_DIR})
 
 # Include directories
 include_directories(
