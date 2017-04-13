@@ -4,6 +4,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cb-geo/develop/license.md)
 [![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](http://cb-geo.github.io/lbmdem)
 [![Build status](https://api.travis-ci.org/cb-geo/lbmdem.svg)](https://travis-ci.org/cb-geo/lbmdem/builds)
+[![CircleCI](https://circleci.com/gh/cb-geo/lbm-dem/tree/develop.svg?style=svg)](https://circleci.com/gh/cb-geo/lbm-dem/tree/develop)
 [![Coverity Scan Build Status](https://scan.coverity.com/projects/10011/badge.svg)](https://scan.coverity.com/projects/cb-geo-lbmdem)
 [![codecov.io](http://codecov.io/github/cb-geo/lbmdem/coverage.svg?branch=develop)](http://codecov.io/github/cb-geo/lbmdem?branch=develop)
 [![](https://img.shields.io/github/issues-raw/cb-geo/lbmdem.svg)](https://github.com/cb-geo/lbmdem/issues)
