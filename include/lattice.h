@@ -31,11 +31,9 @@ class lbmdem::Lattice {
   }
 
  private:
-  //! Restict Copy constructor
-  Lattice(const Lattice&);
-
-  //! Restict Assignment operator
-  Lattice& operator=(const Lattice&);
+  //! Restict Copy & Assignment constructors
+  Lattice(const Lattice&) = delete;
+  Lattice& operator=(const Lattice&) = delete;
 
   //! Weights
   std::array<lbmdem::Real, Tdir> weights_;
