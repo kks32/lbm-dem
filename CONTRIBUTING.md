@@ -10,9 +10,10 @@
     * :art: `:art:` when improving the format/structure of the code
     * :rocket: `:rocket:` when improving performance
     * :bulb: `:bulb:` new idea
+    * :books: `:books:` To add new references
     * :construction: `:construction:` work in progress
-    * :heavy_plus_sign: `:heavy_plus_sign:` when adding feature
-    * :heavy_minus_sign: `:heavy_minus_sign:` when removing feature
+    * :computer: `:computer:` when adding feature
+    * :scissors: `:scissors:` when removing feature
     * :non-potable_water: `:non-potable_water:` when plugging memory leaks
     * :pencil2: `:pencil2:` when writing docs
     * :penguin: `:penguin:` when fixing something on Linux
