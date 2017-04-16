@@ -1,6 +1,18 @@
-## Styleguides
+# Contributing guidelines
 
-### Git Commit Messages
+Contributing to CB-Geo LBM-DEM will require a signed copy of the Contributor License Agreement (CLA). The CLA is an adapted version of the Harmony Contributor Agreement. 
+
+Signing a contributor agreement is necessary for many reasons. For an overview, see [http://oss-watch.ac.uk/resources/cla](http://oss-watch.ac.uk/resources/cla). 
+
+You can download the CLA at [https://github.com/cb-geo/lbm-dem/cla](https://github.com/cb-geo/lbm-dem/cla). 
+
+Please send a signed copy to us via email to [cla@cb-geo.com](mailto:cla@cb-geo.com).
+
+After we have received your agreement, we will approve your GitHub account to make contributions. GitHub merge requests are the only acceptable facility for code submission. Please do not send patches by email. 
+
+Thank you for contributing!
+
+## Git Commit Messages
 
 * Use the present tense ("Add feature" not "Added feature")
 * Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
