@@ -4,7 +4,7 @@ Contributing to CB-Geo LBM-DEM will require a signed copy of the Contributor Lic
 
 Signing a contributor agreement is necessary for many reasons. For an overview, see [http://oss-watch.ac.uk/resources/cla](http://oss-watch.ac.uk/resources/cla). 
 
-You can download the CLA at [https://github.com/cb-geo/lbm-dem/cla](https://github.com/cb-geo/lbm-dem/cla). 
+You can download the CLA from the repo at [https://github.com/cb-geo/lbm-dem/tree/develop/cla](https://github.com/cb-geo/lbm-dem/tree/develop/cla). 
 
 Please send a signed copy to us via email to [cla@cb-geo.com](mailto:cla@cb-geo.com).
 
