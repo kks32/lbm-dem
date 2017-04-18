@@ -18,6 +18,8 @@ template <>
 class lbmdem::Model<2, 9> {
  public:
   lbmdem::Real weight(int x, int y) const {
+    if (abs(x) > 1) return 0.0;
+    if (abs(y) > 1) return 0.0;
     switch ((x == 0) + (y == 0)) {
       case 2:
         return 4.0 / 9.0;
@@ -35,6 +37,9 @@ template <>
 class lbmdem::Model<3, 27> {
  public:
   lbmdem::Real weight(int x, int y, int z) const {
+    if (abs(x) > 1) return 0.0;
+    if (abs(y) > 1) return 0.0;
+    if (abs(z) > 1) return 0.0;
     switch ((x == 0) + (y == 0) + (z == 0)) {
       case 3:
         return 8.0 / 27.0;
