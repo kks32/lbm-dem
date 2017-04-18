@@ -6,7 +6,7 @@
 [![Build status](https://api.travis-ci.org/cb-geo/lbm-dem.svg)](https://travis-ci.org/cb-geo/lbm-dem/builds)
 [![CircleCI](https://circleci.com/gh/cb-geo/lbm-dem/tree/develop.svg?style=svg)](https://circleci.com/gh/cb-geo/lbm-dem/tree/develop)
 [![Coverity Scan Build Status](https://scan.coverity.com/projects/10011/badge.svg)](https://scan.coverity.com/projects/cb-geo-lbmdem)
-[![codecov.io](http://codecov.io/github/cb-geo/lbmdem/coverage.svg?branch=develop)](http://codecov.io/github/cb-geo/lbmdem?branch=develop)
+[![codecov.io](http://codecov.io/github/cb-geo/lbm-dem/coverage.svg?branch=develop)](http://codecov.io/github/cb-geo/lbm-dem?branch=develop)
 [![](https://img.shields.io/github/issues-raw/cb-geo/lbm-dem.svg)](https://github.com/cb-geo/lbm-dem/issues)
 [![CLA assistant](https://cla-assistant.io/readme/badge/cb-geo/lbm-dem)](https://cla-assistant.io/cb-geo/lbm-dem)
 
