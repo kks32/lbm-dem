@@ -6,7 +6,7 @@ Signing a contributor agreement is necessary for many reasons. For an overview, 
 
 You can view the CLA at [https://gist.github.com/cbgeo/7a8541e1d51f131be1d4b7444340dff1](https://gist.github.com/cbgeo/7a8541e1d51f131be1d4b7444340dff1). 
 
-After we have received your agreement, we will approve your GitHub account to make contributions. GitHub merge requests are the only acceptable facility for code submission. Please do not send patches by email. 
+After we have signed the Copyright License Agreement via [https://cla-assistant.io/](https://cla-assistant.io/), we will approve your GitHub account to make contributions. GitHub pull requests are the only acceptable facility for code submission. Please do not send patches by email. 
 
 Thank you for contributing!
 
