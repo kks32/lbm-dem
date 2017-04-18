@@ -15,7 +15,7 @@ jobs:
       - run:
           name: codecov.io
           command: |
-            cd lbm-dem && mkdir build && cd build
+            git clone https://github.com/cb-geo/lbm-dem.git && cd lbm-dem && mkdir build && cd build
             rm -rf ./* && cmake .. -DENABLE_COVERAGE=On
             make clean && make
             ./lbmdem
