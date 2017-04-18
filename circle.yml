@@ -11,4 +11,19 @@ jobs:
           name: Build LBM
           command: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On .. && make clean && make -j8
 
+      # Test code coverage
+      - run:
+          name: codecov.io
+          command: |
+            wget http://ftp.de.debian.org/debian/pool/main/l/lcov/lcov_1.11.orig.tar.gz
+            tar xf lcov_1.11.orig.tar.gz
+            sudo make -C lcov-1.11/ install
+            rm -rf ./* && cmake .. -DENABLE_COVERAGE=On
+            make clean && make
+            ./lbmdem
+            ./lbmdemtest
+            make gcov
+            make lcov
+            bash <(curl -s https://codecov.io/bash) -X gcov
+
 
