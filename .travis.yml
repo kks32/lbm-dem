@@ -34,48 +34,6 @@ before_install:
 ################
 matrix:
   include:
-    # GCC 4.9
-    - compiler: gcc
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-4.9
-      env: COMPILER=g++-4.9
-
-    # Clang GCC 5
-    - compiler: gcc
-      env: COMPILER=g++-5
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-5
-
-    # Clang 3.6
-    - compiler: clang
-      env: COMPILER=clang++-3.6
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-3.6
-          packages:
-            - clang-3.6
-
-    # Clang 3.7
-    - compiler: clang
-      env: COMPILER=clang++-3.7
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-3.7
-          packages:
-            - clang-3.7
-
     # Coverity scan 
     - compiler: gcc
       env:
@@ -156,19 +114,6 @@ matrix:
       after_success:
         - scan-build cmake ..
         - scan-build make
-
-    # OSX / Clang
-    - os: osx
-      osx_image: xcode7.3
-      before_install:
-        - brew update
-        - brew install eigen
-
-    - os: osx
-      osx_image: xcode8
-      before_install:
-        - brew update
-        - brew install eigen
 
 ################
 # build script #
