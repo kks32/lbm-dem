@@ -9,19 +9,6 @@ jobs:
       # Configure CMake and run
       - run:
           name: Build LBM
-          command: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On .. && make clean && make -j8
-
-      # Test code coverage
-      - run:
-          name: codecov.io
-          command: |
-            git clone https://github.com/cb-geo/lbm-dem.git && cd lbm-dem && mkdir build && cd build
-            rm -rf ./* && cmake .. -DENABLE_COVERAGE=On
-            make clean && make
-            ./lbmdem
-            ./lbmdemtest
-            make gcov
-            make lcov
-            bash <(curl -s https://codecov.io/bash) -X gcov
+          command: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On .. && make clean && make -j8 && rm -rf ./* && cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On -DENABLE_COVERAGE=On && make clean && make && ./lbmdem && ./lbmdemtest && make gcov && make lcov &&     bash <(curl -s https://codecov.io/bash) -X gcov
 
 
