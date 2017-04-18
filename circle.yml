@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: /home/cbgeo/research/lbm-dem
     docker:
-      - image: cbgeo/lbmdem
+      - image: quay.io/cbgeo/lbmdem
     steps:
       - checkout
       # Configure CMake and run
