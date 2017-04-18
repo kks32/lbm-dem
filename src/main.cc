@@ -1,7 +1,7 @@
 #include <iostream>
 #include <memory>
 
-#include "lattice.h"
+#include "model.h"
 #include "factory.h"
 #include "lb_node.h"
 #include "settings.h"
