@@ -1,12 +1,10 @@
 # Contributing guidelines
 
-Contributing to CB-Geo LBM-DEM will require a signed copy of the Contributor License Agreement (CLA). The CLA is an adapted version of the Harmony Contributor Agreement. 
+Contributing to CB-Geo LBM-DEM will require you to electronically signed a copy of the Contributor License Agreement (CLA). 
 
 Signing a contributor agreement is necessary for many reasons. For an overview, see [http://oss-watch.ac.uk/resources/cla](http://oss-watch.ac.uk/resources/cla). 
 
-You can download the CLA from the repo at [https://github.com/cb-geo/lbm-dem/tree/develop/cla](https://github.com/cb-geo/lbm-dem/tree/develop/cla). 
-
-Please send a signed copy to us via email to [cla@cb-geo.com](mailto:cla@cb-geo.com).
+You can view the CLA at [https://gist.github.com/cbgeo/7a8541e1d51f131be1d4b7444340dff1](https://gist.github.com/cbgeo/7a8541e1d51f131be1d4b7444340dff1). 
 
 After we have received your agreement, we will approve your GitHub account to make contributions. GitHub merge requests are the only acceptable facility for code submission. Please do not send patches by email. 
 
