@@ -37,6 +37,16 @@ TEST_CASE("Model weights are checked", "[LBM][Model]") {
     REQUIRE(sum == Approx(1.0));
   }
 
+  SECTION("D2Q9 model weights are zero outside the stencil") {
+    const auto d2q9 = lbmdem::Model<2, 9>();
+
+    lbmdem::Real sum = 0;
+    for (int i = -100; i <= 100; ++i)
+      for (int j = -100; j <= 100; ++j)
+        sum += d2q9.weight(i,j);
+    REQUIRE(sum == Approx(1.0));
+  }
+
   SECTION("D3Q27 model weights are checked") {
     const auto d3q27 = lbmdem::Model<3, 27>();
 
@@ -77,6 +87,17 @@ TEST_CASE("Model weights are checked", "[LBM][Model]") {
     for (int i = -1; i <= 1; ++i)
       for (int j = -1; j <= 1; ++j)
         for (int k = -1; k <= 1; ++k)
+          sum += d3q27.weight(i,j,k);
+    REQUIRE(sum == Approx(1.0));
+  }
+
+  SECTION("D3Q27 model weights are zero outside the stencil") {
+    const auto d3q27 = lbmdem::Model<3, 27>();
+
+    lbmdem::Real sum = 0;
+    for (int i = -100; i <= 100; ++i)
+      for (int j = -100; j <= 100; ++j)
+        for (int k = -100; k <= 100; ++k)
           sum += d3q27.weight(i,j,k);
     REQUIRE(sum == Approx(1.0));
   }
