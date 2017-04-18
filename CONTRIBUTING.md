@@ -32,12 +32,13 @@ Thank you for contributing!
     * :bug: `:bug:` when fixing a bug
     * :fire: `:fire:` when removing code or files
     * :green_heart: `:green_heart:` when fixing the CI build
-    * :white_check_mark: `:white_check_mark:` when adding tests
+    * :dart: `:dart:` when adding tests
     * :lock: `:lock:` when dealing with security
     * :arrow_up: `:arrow_up:` when upgrading dependencies
     * :arrow_down: `:arrow_down:` when downgrading dependencies
     * :speaker: `:speaker:` when adding logging
     * :mute: `:mute:` when reducing logging
     * :shirt: `:shirt:` when removing linter warnings
+    * :wrench: `:wrench:` Fixing broken items
 
 

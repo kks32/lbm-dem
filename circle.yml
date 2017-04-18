@@ -15,6 +15,7 @@ jobs:
       - run:
           name: codecov.io
           command: |
+            cd lbm-dem && mkdir build && cd build
             rm -rf ./* && cmake .. -DENABLE_COVERAGE=On
             make clean && make
             ./lbmdem
