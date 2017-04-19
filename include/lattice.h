@@ -1,21 +1,21 @@
-#ifndef LBMDEM_MODEL_H_
-#define LBMDEM_MODEL_H_
+#ifndef LBMDEM_LATTICE_H_
+#define LBMDEM_LATTICE_H_
 
 #include "settings.h"
 
 namespace lbmdem {
-//! Abstract Model base class
-//! \brief Base class that stores the information about Lattice model
-//! \tparam TD Dimension
-//! \tparam TQ Number of discrete velocity directions
-template <unsigned TD, unsigned TQ>
-class Model;
+//! Abstract Lattice base class
+//! \brief Base class that stores the information about Lattice
+//! \tparam Tdim Dimension
+//! \tparam Tq Number of discrete velocity directions
+template <unsigned Tdim, unsigned Tq>
+class Lattice;
 }
 
-//! D2Q9 Model
+//! D2Q9 Lattice
 //! \brief Weights for the D2Q9 stencil
 template <>
-class lbmdem::Model<2, 9> {
+class lbmdem::Lattice<2, 9> {
  public:
   lbmdem::Real weight(int x, int y) const {
     if (abs(x) > 1) return 0.0;
@@ -31,10 +31,10 @@ class lbmdem::Model<2, 9> {
   }
 };
 
-//! D3Q27 Model
-//! \brief Weights for the D3Q27 lattice model
+//! D3Q27 Lattice
+//! \brief Weights for the D3Q27 lattice
 template <>
-class lbmdem::Model<3, 27> {
+class lbmdem::Lattice<3, 27> {
  public:
   lbmdem::Real weight(int x, int y, int z) const {
     if (abs(x) > 1) return 0.0;
@@ -53,4 +53,4 @@ class lbmdem::Model<3, 27> {
   }
 };
 
-#endif //LBMDEM_MODEL_H_
+#endif //LBMDEM_LATTICE_H_

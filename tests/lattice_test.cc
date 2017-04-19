@@ -1,18 +1,17 @@
-// Nodebase test
 #include <limits>
 #include <memory>
 
 #include "catch.hpp"
 
-#include "model.h"
+#include "lattice.h"
 #include "settings.h"
 
-//! \brief Check 3D model D3Q19 case
-TEST_CASE("Model weights are checked", "[LBM][Model]") {
+//! \brief Check 2D lattice D2Q9 case
+TEST_CASE("Lattice weights are checked", "[LBM][Lattice][D2Q9]") {
   const lbmdem::Real Tolerance = 1.E-16;
 
-  SECTION("D2Q9 model weights are checked") {
-    const auto d2q9 = lbmdem::Model<2, 9>();
+  SECTION("D2Q9 lattice weights are checked") {
+    const auto d2q9 = lbmdem::Lattice<2, 9>();
 
     REQUIRE(d2q9.weight( 0, 0) == Approx(4.0/9.0));
 
@@ -27,8 +26,8 @@ TEST_CASE("Model weights are checked", "[LBM][Model]") {
     REQUIRE(d2q9.weight(-1,-1) == Approx(1.0/36.0));
   }
 
-  SECTION("D2Q9 model weights sum to 1") {
-    const auto d2q9 = lbmdem::Model<2, 9>();
+  SECTION("D2Q9 lattice weights sum to 1") {
+    const auto d2q9 = lbmdem::Lattice<2, 9>();
 
     lbmdem::Real sum = 0;
     for (int i = -1; i <= 1; ++i)
@@ -37,8 +36,8 @@ TEST_CASE("Model weights are checked", "[LBM][Model]") {
     REQUIRE(sum == Approx(1.0));
   }
 
-  SECTION("D2Q9 model weights are zero outside the stencil") {
-    const auto d2q9 = lbmdem::Model<2, 9>();
+  SECTION("D2Q9 lattice weights are zero outside the stencil") {
+    const auto d2q9 = lbmdem::Lattice<2, 9>();
 
     lbmdem::Real sum = 0;
     for (int i = -100; i <= 100; ++i)
@@ -46,9 +45,14 @@ TEST_CASE("Model weights are checked", "[LBM][Model]") {
         sum += d2q9.weight(i,j);
     REQUIRE(sum == Approx(1.0));
   }
+}
 
-  SECTION("D3Q27 model weights are checked") {
-    const auto d3q27 = lbmdem::Model<3, 27>();
+//! \brief Check 3D lattice D3Q27 case
+TEST_CASE("Lattice weights are checked", "[LBM][Lattice][D3Q27]") {
+  const lbmdem::Real Tolerance = 1.E-16;
+
+  SECTION("D3Q27 lattice weights are checked") {
+    const auto d3q27 = lbmdem::Lattice<3, 27>();
 
     REQUIRE(d3q27.weight( 0, 0, 0) == Approx(8.0/27.0));
 
@@ -80,8 +84,8 @@ TEST_CASE("Model weights are checked", "[LBM][Model]") {
     REQUIRE(d3q27.weight(-1,-1,-1) == Approx(1.0/216.0));
   }
 
-  SECTION("D3Q27 model weights sum to 1") {
-    const auto d3q27 = lbmdem::Model<3, 27>();
+  SECTION("D3Q27 lattice weights sum to 1") {
+    const auto d3q27 = lbmdem::Lattice<3, 27>();
 
     lbmdem::Real sum = 0;
     for (int i = -1; i <= 1; ++i)
@@ -91,8 +95,8 @@ TEST_CASE("Model weights are checked", "[LBM][Model]") {
     REQUIRE(sum == Approx(1.0));
   }
 
-  SECTION("D3Q27 model weights are zero outside the stencil") {
-    const auto d3q27 = lbmdem::Model<3, 27>();
+  SECTION("D3Q27 lattice weights are zero outside the stencil") {
+    const auto d3q27 = lbmdem::Lattice<3, 27>();
 
     lbmdem::Real sum = 0;
     for (int i = -100; i <= 100; ++i)
