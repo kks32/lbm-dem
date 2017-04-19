@@ -19,6 +19,10 @@ class lbmdem::Lattice {
   static const std::array<lbmdem::Real,Tq> weights;
   static const std::array<std::array<int,Tdim>,Tq> velocities;
 
+  int opposite(int i) const {
+    return Tq - i - 1;
+  }
+
   template <typename... Ix>
   lbmdem::Real weight(Ix... i) const {
     std::array<int,Tdim> ix{i...};
