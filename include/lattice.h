@@ -43,6 +43,35 @@ const std::array<std::array<int,2>,9> lbmdem::Lattice<2,9>::velocities = { std::
 };
 
 template <>
+const std::array<lbmdem::Real,19> lbmdem::Lattice<3,19>::weights = {
+           1./ 36.,
+  1./ 36., 1./ 18., 1./ 36.,
+           1./ 36.,
+
+  1./ 36., 1./ 18., 1./ 36.,
+  1./ 18., 1./  3., 1./ 18.,
+  1./ 36., 1./ 18., 1./ 36.,
+
+           1./ 36.,
+  1./ 36., 1./ 18., 1./ 36.,
+           1./ 36.,
+};
+template <>
+const std::array<std::array<int,3>,19> lbmdem::Lattice<3,19>::velocities = { std::array<int,3>
+              { 0, 1, 1},
+  {-1, 0, 1}, { 0, 0, 1}, { 1, 0, 1},
+              { 0,-1, 1},
+
+  {-1, 1, 0}, { 0, 1, 0}, { 1, 1, 0},
+  {-1, 0, 0}, { 0, 0, 0}, { 1, 0, 0},
+  {-1,-1, 0}, { 0,-1, 0}, { 1,-1, 0},
+
+              { 0, 1,-1},
+  {-1, 0,-1}, { 0, 0,-1}, { 1, 0,-1},
+              { 0,-1,-1},
+};
+
+template <>
 const std::array<lbmdem::Real,27> lbmdem::Lattice<3,27>::weights = {
   1./216., 1./ 54., 1./216.,
   1./ 54., 2./ 27., 1./ 54.,
