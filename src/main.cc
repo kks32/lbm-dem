@@ -11,5 +11,5 @@ int main(int argc, char** argv) {
   const unsigned Dim = 3;
   std::array<lbmdem::Lint, Dim> coord = {{0}};
   auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coord);
-  std::cout << node->isfluid() << '\t';
+  std::cout << node->isfluid() << '\n';
 }

@@ -7,7 +7,7 @@
 #include "settings.h"
 
 //! \brief Check 2D lattice D2Q9 case
-TEST_CASE("Lattice weights are checked", "[LBM][Lattice][D2Q9]") {
+TEST_CASE("2D Lattice weights are checked", "[LBM][Lattice][D2Q9]") {
   const lbmdem::Real Tolerance = 1.E-16;
 
   SECTION("D2Q9 lattice weights are checked") {
@@ -48,7 +48,7 @@ TEST_CASE("Lattice weights are checked", "[LBM][Lattice][D2Q9]") {
 }
 
 //! \brief Check 3D lattice D3Q27 case
-TEST_CASE("Lattice weights are checked", "[LBM][Lattice][D3Q27]") {
+TEST_CASE("3D Lattice weights are checked", "[LBM][Lattice][D3Q27]") {
   const lbmdem::Real Tolerance = 1.E-16;
 
   SECTION("D3Q27 lattice weights are checked") {
