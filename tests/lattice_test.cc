@@ -34,6 +34,11 @@ TEST_CASE("2D Lattice weights are checked", "[LBM][Lattice][D2Q9]") {
       for (int j = -1; j <= 1; ++j)
         sum += d2q9.weight(i,j);
     REQUIRE(sum == Approx(1.0));
+
+    sum = 0;
+    for (int i = 0; i < 9; ++i)
+      sum += d2q9.weights.at(i);
+    REQUIRE(sum == Approx(1.0));
   }
 
   SECTION("D2Q9 lattice weights are zero outside the stencil") {
@@ -92,6 +97,11 @@ TEST_CASE("3D Lattice weights are checked", "[LBM][Lattice][D3Q27]") {
       for (int j = -1; j <= 1; ++j)
         for (int k = -1; k <= 1; ++k)
           sum += d3q27.weight(i,j,k);
+    REQUIRE(sum == Approx(1.0));
+
+    sum = 0;
+    for (int i = 0; i < 27; ++i)
+      sum += d3q27.weights.at(i);
     REQUIRE(sum == Approx(1.0));
   }
 
