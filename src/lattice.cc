@@ -1,21 +1,29 @@
 #include <array>
 #include "lattice.h"
 
+//! D2Q9
 template <>
-const std::array<lbmdem::Real,9> lbmdem::Lattice<2,9>::weights = {
+const std::array<lbmdem::Real, 9> lbmdem::Lattice<2, 9>::weights = {
+    // clang-format off
   1./36., 1./ 9., 1./36.,
   1./ 9., 4./ 9., 1./ 9.,
   1./36., 1./ 9., 1./36.,
+    // clang-format on
 };
 template <>
-const std::array<std::array<int,2>,9> lbmdem::Lattice<2,9>::velocities = { std::array<int,2>
+const std::array<std::array<int,2>,9> lbmdem::Lattice<2,9>::velocities = {
+  std::array<int,2>
+  // clang-format off
   {-1, 1}, { 0, 1}, { 1, 1},
   {-1, 0}, { 0, 0}, { 1, 0},
   {-1,-1}, { 0,-1}, { 1,-1},
+  // clang-format on
 };
 
+//! D3Q19
 template <>
-const std::array<lbmdem::Real,19> lbmdem::Lattice<3,19>::weights = {
+const std::array<lbmdem::Real, 19> lbmdem::Lattice<3, 19>::weights = {
+    // clang-format off
            1./ 36.,
   1./ 36., 1./ 18., 1./ 36.,
            1./ 36.,
@@ -27,9 +35,12 @@ const std::array<lbmdem::Real,19> lbmdem::Lattice<3,19>::weights = {
            1./ 36.,
   1./ 36., 1./ 18., 1./ 36.,
            1./ 36.,
+    // clang-format on
 };
 template <>
-const std::array<std::array<int,3>,19> lbmdem::Lattice<3,19>::velocities = { std::array<int,3>
+const std::array<std::array<int, 3>, 19> lbmdem::Lattice<3, 19>::velocities = {
+    std::array<int, 3>
+    // clang-format off
               { 0, 1, 1},
   {-1, 0, 1}, { 0, 0, 1}, { 1, 0, 1},
               { 0,-1, 1},
@@ -41,10 +52,13 @@ const std::array<std::array<int,3>,19> lbmdem::Lattice<3,19>::velocities = { std
               { 0, 1,-1},
   {-1, 0,-1}, { 0, 0,-1}, { 1, 0,-1},
               { 0,-1,-1},
+    // clang-format on
 };
 
+//! D3Q27
 template <>
-const std::array<lbmdem::Real,27> lbmdem::Lattice<3,27>::weights = {
+const std::array<lbmdem::Real, 27> lbmdem::Lattice<3, 27>::weights = {
+    // clang-format off
   1./216., 1./ 54., 1./216.,
   1./ 54., 2./ 27., 1./ 54.,
   1./216., 1./ 54., 1./216.,
@@ -56,9 +70,12 @@ const std::array<lbmdem::Real,27> lbmdem::Lattice<3,27>::weights = {
   1./216., 1./ 54., 1./216.,
   1./ 54., 2./ 27., 1./ 54.,
   1./216., 1./ 54., 1./216.,
+    // clang-format on
 };
 template <>
-const std::array<std::array<int,3>,27> lbmdem::Lattice<3,27>::velocities = { std::array<int,3>
+const std::array<std::array<int, 3>, 27> lbmdem::Lattice<3, 27>::velocities = {
+    std::array<int, 3>
+    // clang-format off
   {-1, 1, 1}, { 0, 1, 1}, { 1, 1, 1},
   {-1, 0, 1}, { 0, 0, 1}, { 1, 0, 1},
   {-1,-1, 1}, { 0,-1, 1}, { 1,-1, 1},
@@ -70,4 +87,5 @@ const std::array<std::array<int,3>,27> lbmdem::Lattice<3,27>::velocities = { std
   {-1, 1,-1}, { 0, 1,-1}, { 1, 1,-1},
   {-1, 0,-1}, { 0, 0,-1}, { 1, 0,-1},
   {-1,-1,-1}, { 0,-1,-1}, { 1,-1,-1},
+    // clang-format on
 };
