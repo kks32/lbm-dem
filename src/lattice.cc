@@ -1,7 +1,7 @@
 #include <array>
 #include "lattice.h"
 
-//! D2Q9
+//! \brief Weights for D2Q9
 template <>
 const std::array<lbmdem::Real, 9> lbmdem::Lattice<2, 9>::weights = {
     // clang-format off
@@ -10,6 +10,8 @@ const std::array<lbmdem::Real, 9> lbmdem::Lattice<2, 9>::weights = {
   1./36., 1./ 9., 1./36.,
     // clang-format on
 };
+
+//! \brief Velocities for D2Q9
 template <>
 const std::array<std::array<int,2>,9> lbmdem::Lattice<2,9>::velocities = {
   std::array<int,2>
@@ -20,7 +22,7 @@ const std::array<std::array<int,2>,9> lbmdem::Lattice<2,9>::velocities = {
   // clang-format on
 };
 
-//! D3Q19
+//! \brief Weights for D3Q19
 template <>
 const std::array<lbmdem::Real, 19> lbmdem::Lattice<3, 19>::weights = {
     // clang-format off
@@ -37,6 +39,8 @@ const std::array<lbmdem::Real, 19> lbmdem::Lattice<3, 19>::weights = {
            1./ 36.,
     // clang-format on
 };
+
+//! \brief Velocities for D3Q19
 template <>
 const std::array<std::array<int, 3>, 19> lbmdem::Lattice<3, 19>::velocities = {
     std::array<int, 3>
@@ -55,7 +59,7 @@ const std::array<std::array<int, 3>, 19> lbmdem::Lattice<3, 19>::velocities = {
     // clang-format on
 };
 
-//! D3Q27
+//! \brief Weights for D3Q27
 template <>
 const std::array<lbmdem::Real, 27> lbmdem::Lattice<3, 27>::weights = {
     // clang-format off
@@ -72,6 +76,8 @@ const std::array<lbmdem::Real, 27> lbmdem::Lattice<3, 27>::weights = {
   1./216., 1./ 54., 1./216.,
     // clang-format on
 };
+
+//! \brief Velocities for D3Q27
 template <>
 const std::array<std::array<int, 3>, 27> lbmdem::Lattice<3, 27>::velocities = {
     std::array<int, 3>

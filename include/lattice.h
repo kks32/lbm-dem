@@ -4,33 +4,24 @@
 #include "settings.h"
 
 namespace lbmdem {
+template <unsigned Tdim, unsigned Tq>
+class Lattice;
+}
+
 //! Abstract Lattice base class
 //! \brief Base class that stores the information about Lattice
 //! \tparam Tdim Dimension
 //! \tparam Tq Number of discrete velocity directions
 template <unsigned Tdim, unsigned Tq>
-class Lattice;
-}
-
-template <unsigned Tdim, unsigned Tq>
 class lbmdem::Lattice {
-  public:
+ public:
+  //! Index of opposite node in a stencil
+  int opposite(int i) const { return Tq - i - 1; }
 
-  static const std::array<lbmdem::Real,Tq> weights;
-  static const std::array<std::array<int,Tdim>,Tq> velocities;
-
-  int opposite(int i) const {
-    return Tq - i - 1;
-  }
-
-  template <typename... Ix>
-  lbmdem::Real weight(Ix... i) const {
-    std::array<int,Tdim> ix{i...};
-    for (int j = 0; j < Tq; ++j)
-      if (ix == velocities.at(j))
-        return weights.at(j);
-    return 0.0;
-  }
+  //! Lattice weights
+  static const std::array<lbmdem::Real, Tq> weights;
+  //! Velocities
+  static const std::array<std::array<int, Tdim>, Tq> velocities;
 };
 
-#endif //LBMDEM_LATTICE_H_
+#endif  // LBMDEM_LATTICE_H_
