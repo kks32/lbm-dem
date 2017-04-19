@@ -48,6 +48,16 @@ TEST_CASE("D2Q9 Lattice weights are checked", "[LBM][Lattice][D2Q9]") {
         sum += d2q9.weight(i,j);
     REQUIRE(sum == Approx(1.0));
   }
+
+  SECTION("D2Q9 opposite lattice velocities are opposite") {
+    const auto d2q9 = lbmdem::Lattice<2, 9>();
+
+    for (int i = 0; i < 9; ++i) {
+      int j = d2q9.opposite(i);
+      for (int k = 0; k < 2; ++k)
+        REQUIRE(d2q9.velocities.at(i).at(k) + d2q9.velocities.at(j).at(k) == Approx(0.0));
+    }
+  }
 }
 
 TEST_CASE("D3Q27 Lattice weights are checked", "[LBM][Lattice][D3Q19]") {
@@ -76,6 +86,16 @@ TEST_CASE("D3Q27 Lattice weights are checked", "[LBM][Lattice][D3Q19]") {
         for (int k = -100; k <= 100; ++k)
           sum += d3q19.weight(i,j,k);
     REQUIRE(sum == Approx(1.0));
+  }
+
+  SECTION("D3Q19 opposite lattice velocities are opposite") {
+    const auto d3q19 = lbmdem::Lattice<3, 19>();
+
+    for (int i = 0; i < 19; ++i) {
+      int j = d3q19.opposite(i);
+      for (int k = 0; k < 3; ++k)
+        REQUIRE(d3q19.velocities.at(i).at(k) + d3q19.velocities.at(j).at(k) == Approx(0.0));
+    }
   }
 }
 
@@ -139,5 +159,15 @@ TEST_CASE("DQ27 Lattice weights are checked", "[LBM][Lattice][D3Q27]") {
         for (int k = -100; k <= 100; ++k)
           sum += d3q27.weight(i,j,k);
     REQUIRE(sum == Approx(1.0));
+  }
+
+  SECTION("D3Q27 opposite lattice velocities are opposite") {
+    const auto d3q27 = lbmdem::Lattice<3, 27>();
+
+    for (int i = 0; i < 27; ++i) {
+      int j = d3q27.opposite(i);
+      for (int k = 0; k < 3; ++k)
+        REQUIRE(d3q27.velocities.at(i).at(k) + d3q27.velocities.at(j).at(k) == Approx(0.0));
+    }
   }
 }
