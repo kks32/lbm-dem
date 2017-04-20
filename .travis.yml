@@ -54,6 +54,7 @@ matrix:
       addons:
         apt:
           sources:
+          - ubuntu-toolchain-r-test
           - llvm-toolchain-precise-3.7
           packages:
           - clang-3.7
@@ -63,6 +64,7 @@ matrix:
       addons:
         apt:
           sources:
+          - ubuntu-toolchain-r-test
           - llvm-toolchain-precise-3.8
           packages:
           - clang-3.8
@@ -72,6 +74,7 @@ matrix:
       addons:
         apt:
           sources:
+          - ubuntu-toolchain-r-test
           - llvm-toolchain-precise-3.9
           packages:
           - clang-3.9
