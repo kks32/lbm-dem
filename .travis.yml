@@ -29,7 +29,7 @@ matrix:
           - ubuntu-toolchain-r-test
           packages:
           - g++-4.9
-      env: COMPILER=g++-4.9
+      env: CXX=g++-4.9
     - compiler: gcc
       addons:
         apt:
@@ -37,7 +37,7 @@ matrix:
           - ubuntu-toolchain-r-test
           packages:
           - g++-5
-      env: COMPILER=g++-5
+      env: CXX=g++-5
     - compiler: gcc
       addons:
         apt:
@@ -45,7 +45,7 @@ matrix:
           - ubuntu-toolchain-r-test
           packages:
           - g++-6
-      env: COMPILER=g++-6
+      env: CXX=g++-6
 
   # include:
   #   # Coverity scan 
