@@ -9,5 +9,5 @@ jobs:
       # Configure CMake and run
       - run:
           name: Build LBM
-          command: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On .. && make clean && make -j8
+          command: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On .. && make clean && make -j8 && ./lbmdemtest
 

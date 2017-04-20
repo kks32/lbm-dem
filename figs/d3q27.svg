@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.92.1 r"
-   sodipodi:docname="d3q19.svg">
+   sodipodi:docname="d3q27.svg">
   <defs
      id="defs4">
     <marker
@@ -605,7 +605,7 @@
          id="tspan4795"
          x="338.75125"
          y="484.86523"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">9</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">14</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -615,8 +615,8 @@
          sodipodi:role="line"
          id="tspan4795-4"
          x="226.19154"
-         y="486.83926"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_AMS;-inkscape-font-specification:MathJax_AMS"> </tspan></text>
+         y="489.95645"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_AMS;-inkscape-font-specification:MathJax_AMS" /></text>
     <g
        id="g4814"
        transform="translate(0,-2.5258171e-6)">
@@ -672,14 +672,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="228.31599"
+       x="217.06599"
        y="485.51254"
        id="text4793-2"><tspan
          sodipodi:role="line"
          id="tspan4795-0"
-         x="228.31599"
+         x="217.06599"
          y="485.51254"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">8</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">13</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -690,7 +690,7 @@
          id="tspan4795-9"
          x="338.20718"
          y="599.55933"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">2</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">5</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -701,7 +701,7 @@
          id="tspan4795-43"
          x="376.49231"
          y="450.14478"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">12</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">17</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -723,7 +723,7 @@
          id="tspan4795-6"
          x="234.8148"
          y="599.23767"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">1</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">4</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -734,7 +734,7 @@
          id="tspan4795-40"
          x="217.04535"
          y="384.73019"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">15</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">22</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -745,18 +745,18 @@
          id="tspan4795-1"
          x="254.99847"
          y="450.19168"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">11</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">16</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="190.77191"
+       x="179.52191"
        y="519.68884"
        id="text4793-27"><tspan
          sodipodi:role="line"
          id="tspan4795-7"
-         x="190.77191"
+         x="179.52191"
          y="519.68884"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">5</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">10</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -767,18 +767,18 @@
          id="tspan4795-8"
          x="376.6218"
          y="564.09393"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">4</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">8</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="301.46613"
-       y="634.19165"
+       x="302.22"
+       y="635.31281"
        id="text4793-10"><tspan
          sodipodi:role="line"
          id="tspan4795-76"
-         x="301.46613"
-         y="634.19165"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">0</tspan></text>
+         x="302.22"
+         y="635.31281"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -789,7 +789,7 @@
          id="tspan4795-10"
          x="438.11902"
          y="499.22903"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">10</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">15</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -800,7 +800,7 @@
          id="tspan4795-19"
          x="316.1196"
          y="385.53879"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main"> 16</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main"> 23</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -811,7 +811,7 @@
          id="tspan4795-3"
          x="300.98953"
          y="520.32117"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">6</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">11</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -822,7 +822,7 @@
          id="tspan4795-06"
          x="412.23059"
          y="385.21234"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main"> 17</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main"> 24</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -833,7 +833,7 @@
          id="tspan4795-74"
          x="437.77191"
          y="599.4093"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">3</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">6</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -844,7 +844,7 @@
          id="tspan4795-44"
          x="400.7981"
          y="534.47681"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">7</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">12</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -855,18 +855,18 @@
          id="tspan4795-12"
          x="476.51297"
          y="465.25919"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">13</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">18</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="281.41586"
+       x="275.79086"
        y="419.88589"
        id="text4793-89"><tspan
          sodipodi:role="line"
          id="tspan4795-60"
-         x="281.41586"
+         x="275.79086"
          y="419.88589"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main">14</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main"> 20</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -877,6 +877,94 @@
          id="tspan4795-09"
          x="350.10114"
          y="348.92719"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main"> 18</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main"> 26</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="178.92097"
+       y="420.82571"
+       id="text4793-1-3"><tspan
+         sodipodi:role="line"
+         id="tspan4795-40-6"
+         x="178.92097"
+         y="420.82571"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main;stroke-width:1px">19</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="383.38989"
+       y="420.80637"
+       id="text4793-1-7"><tspan
+         sodipodi:role="line"
+         id="tspan4795-40-5"
+         x="383.38989"
+         y="420.80637"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main;stroke-width:1px">21</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="475.87946"
+       y="350.13068"
+       id="text4793-1-35"><tspan
+         sodipodi:role="line"
+         id="tspan4795-40-62"
+         x="475.87946"
+         y="350.13068"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main;stroke-width:1px">27</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="255.9852"
+       y="349.75372"
+       id="text4793-1-9"><tspan
+         sodipodi:role="line"
+         id="tspan4795-40-1"
+         x="255.9852"
+         y="349.75372"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main;stroke-width:1px">25</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="198.83084"
+       y="635.6604"
+       id="text4793-1-2"><tspan
+         sodipodi:role="line"
+         id="tspan4795-40-7"
+         x="198.83084"
+         y="635.6604"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main;stroke-width:1px">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="274.40671"
+       y="565.17316"
+       id="text4793-1-0"><tspan
+         sodipodi:role="line"
+         id="tspan4795-40-9"
+         x="274.40671"
+         y="565.17316"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main;stroke-width:1px">7</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="476.06793"
+       y="564.79626"
+       id="text4793-1-36"><tspan
+         sodipodi:role="line"
+         id="tspan4795-40-0"
+         x="476.06793"
+         y="564.79626"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main;stroke-width:1px">9</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="401.99982"
+       y="634.52954"
+       id="text4793-1-6"><tspan
+         sodipodi:role="line"
+         id="tspan4795-40-2"
+         x="401.99982"
+         y="634.52954"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:1.25;font-family:MathJax_Main;-inkscape-font-specification:MathJax_Main;stroke-width:1px">3</tspan></text>
   </g>
 </svg>
