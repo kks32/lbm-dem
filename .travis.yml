@@ -7,6 +7,21 @@ language: cpp
 
 dist: trusty
 
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    - llvm-toolchain-precise-3.7
+    - llvm-toolchain-precise-3.8
+    - llvm-toolchain-precise-3.9
+    packages:
+    - g++-4.9
+    - g++-5
+    - g++-6
+    - clang-3.7
+    - clang-3.8
+    - clang-3.9
+
 ###################
 # global settings #
 ###################
@@ -20,66 +35,14 @@ env:
 ################
 # build matrix #
 ################
-matrix:
-  include:
-    - compiler: gcc-4.9
-      env: CXX_COMPILER=g++-4.9
-      addons:
-        apt:
-          sources:
-          - ubuntu-toolchain-r-test
-          packages:
-          - g++-4.9
+env:
+  - CXX_COMPILER=g++-4.9
+  - CXX_COMPILER=g++-5
+  - CXX_COMPILER=g++-6
+  - CXX_COMPILER=clang-3.7
+  - CXX_COMPILER=clang-3.8
+  - CXX_COMPILER=clang-3.9
 
-    - compiler: gcc-5
-      env: CXX_COMPILER=g++-5
-      addons:
-        apt:
-          sources:
-          - ubuntu-toolchain-r-test
-          packages:
-          - g++-5
-
-    - compiler: gcc-6
-      env: CXX_COMPILER=g++-6
-      addons:
-        apt:
-          sources:
-          - ubuntu-toolchain-r-test
-          packages:
-          - g++-6
-
-    - compiler: clang-3.7
-      env: CXX_COMPILER=clang++-3.7
-      addons:
-        apt:
-          sources:
-          - ubuntu-toolchain-r-test
-          - llvm-toolchain-precise-3.7
-          packages:
-          - clang-3.7
-
-    - compiler: clang-3.8
-      env: CXX_COMPILER=clang++-3.8
-      addons:
-        apt:
-          sources:
-          - ubuntu-toolchain-r-test
-          - llvm-toolchain-precise-3.8
-          packages:
-          - clang-3.8
-
-    - compiler: clang-3.8
-      env: CXX_COMPILER=clang++-3.9
-      addons:
-        apt:
-          sources:
-          - ubuntu-toolchain-r-test
-          - llvm-toolchain-precise-3.9
-          packages:
-          - clang-3.9
-
-  # include:
   #   # Coverity scan 
   #   - compiler: gcc
   #     env:
