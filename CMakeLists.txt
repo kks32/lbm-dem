@@ -33,7 +33,6 @@ include_directories(
 # LBMDEM executable
 SET(lbm_src
     src/main.cc
-    src/lattice.cc
 )
 add_executable(lbmdem
                ${lbm_src}
@@ -45,7 +44,6 @@ SET(test_src
     tests/lattice_test.cc
     tests/lb_node_2d_test.cc
     tests/lb_node_3d_test.cc
-    src/lattice.cc
 )
 add_executable(lbmdemtest
                ${test_src}
