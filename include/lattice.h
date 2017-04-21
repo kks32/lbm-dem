@@ -26,4 +26,23 @@ class lbmdem::Lattice {
   static const std::array<std::array<int, Tdim>, Tq> velocities;
 };
 
+// Declaration of a static members
+// D2Q9
+template <>
+const std::array<lbmdem::Real, 9> lbmdem::Lattice<2, 9>::weights;
+template <>
+const std::array<std::array<int, 2>, 9> lbmdem::Lattice<2, 9>::velocities;
+
+// D3Q19
+template <>
+const std::array<lbmdem::Real, 19> lbmdem::Lattice<3, 19>::weights;
+template <>
+const std::array<std::array<int, 3>, 19> lbmdem::Lattice<3, 19>::velocities;
+
+// D3Q27
+template <>
+const std::array<lbmdem::Real, 27> lbmdem::Lattice<3, 27>::weights;
+template <>
+const std::array<std::array<int, 3>, 27> lbmdem::Lattice<3, 27>::velocities;
+
 #endif  // LBMDEM_LATTICE_H_
