@@ -85,8 +85,9 @@ matrix:
     - wget https://downloads.sourceforge.net/project/cppcheck/cppcheck/1.78/cppcheck-1.78.tar.gz
     - tar xvf cppcheck-1.78.tar.gz
     - cd cppcheck-1.78
-    - cmake -DCMAKE_BUILD_TYPE=Release
+    - cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=.
     - make
+    - make install
     - cd ..
     install: ''
     script:
