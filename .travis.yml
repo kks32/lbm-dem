@@ -74,7 +74,8 @@ matrix:
         - clang-3.9
 
 
-  - script: cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
+  - env: SPECIAL=cppcheck
+    script: cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
     addons:
       apt:
         packages:
