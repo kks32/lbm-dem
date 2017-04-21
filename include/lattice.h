@@ -1,6 +1,8 @@
 #ifndef LBMDEM_LATTICE_H_
 #define LBMDEM_LATTICE_H_
 
+#include <array>
+
 #include "settings.h"
 
 namespace lbmdem {
@@ -24,5 +26,4 @@ class lbmdem::Lattice {
   static const std::array<std::array<int, Tdim>, Tq> velocities;
 };
 
-#include "lattice.tcc"
 #endif  // LBMDEM_LATTICE_H_

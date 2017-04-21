@@ -32,6 +32,7 @@ include_directories(
 
 # LBMDEM executable
 SET(lbm_src
+    src/lattice.cc
     src/main.cc
 )
 add_executable(lbmdem
@@ -40,6 +41,7 @@ add_executable(lbmdem
 
 # Unit test
 SET(test_src
+    src/lattice.cc
     tests/test.cc
     tests/lattice_test.cc
     tests/lb_node_2d_test.cc

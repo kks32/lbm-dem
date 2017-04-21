@@ -1,3 +1,5 @@
+#include "lattice.h"
+
 //! \brief Weights for D2Q9
 template <>
 const std::array<lbmdem::Real, 9> lbmdem::Lattice<2, 9>::weights = {
@@ -92,3 +94,4 @@ const std::array<std::array<int, 3>, 27> lbmdem::Lattice<3, 27>::velocities = {
   {-1, 1, 1}, { 0, 1, 1}, { 1, 1, 1},
     // clang-format on
 };
+
