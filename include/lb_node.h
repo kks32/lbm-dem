@@ -10,20 +10,20 @@
 
 namespace lbmdem {
 template <unsigned Tdim>
-class LbNode;
+class LBNode;
 }
 
 //! LBM Node class
 //! \brief Base class that stores the information about lbm nodes
-//! \details LbNode class: id_ and coordinates.
+//! \details LBNode class: id_ and coordinates.
 //! \tparam Tdim Dimension
 template <unsigned Tdim>
-class lbmdem::LbNode {
+class lbmdem::LBNode {
  public:
   // Constructor with id and coordinates
   //! \param[in] id Node id
   //! \param[in] coord coordinates of the node
-  LbNode(const lbmdem::Lint& id, const std::array<lbmdem::Lint, Tdim>& coord)
+  LBNode(const lbmdem::Lint& id, const std::array<lbmdem::Lint, Tdim>& coord)
       : id_{id} {
     // Check if the dimension is between 2 or 3
     static_assert((Tdim == 2 || Tdim == 3), "Invalid global dimension");
@@ -37,7 +37,7 @@ class lbmdem::LbNode {
   //! \param[in] id Node id
   //! \param[in] coord Nodal coordinates
   //! \param[in] state State of the LB node (Solid, Fluid or Gas)
-  LbNode(const lbmdem::Lint& id, const std::array<lbmdem::Lint, Tdim>& coord,
+  LBNode(const lbmdem::Lint& id, const std::array<lbmdem::Lint, Tdim>& coord,
          bool isfluid)
       : id_{id}, isfluid_{isfluid} {
     // Check if the dimension is between 2 or 3
@@ -66,10 +66,10 @@ class lbmdem::LbNode {
 
  private:
   //! Restict Copy constructor
-  LbNode(const LbNode<Tdim>&);
+  LBNode(const LBNode<Tdim>&);
 
   //! Restict Assignment operator
-  LbNode& operator=(const LbNode<Tdim>&);
+  LBNode& operator=(const LBNode<Tdim>&);
 
  protected:
   //! LB node id

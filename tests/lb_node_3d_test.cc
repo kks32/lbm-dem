@@ -15,21 +15,21 @@ TEST_CASE("LB node is checked for 3D case with id & coordinates",
   //! Check for id = 0
   SECTION("Node id is zero") {
     lbmdem::Lint id = 0;
-    auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+    auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords);
     REQUIRE(node->id() == 0);
   }
 
   SECTION("Node id is negative") {
     //! Check for negative node id
     lbmdem::Lint id = std::numeric_limits<lbmdem::Lint>::min();
-    auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+    auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords);
     REQUIRE(node->id() == std::numeric_limits<lbmdem::Lint>::min());
   }
 
   SECTION("Node id is positive") {
     //! Check for id is a positive value
     lbmdem::Lint id = std::numeric_limits<lbmdem::Lint>::max();
-    auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+    auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords);
     REQUIRE(node->id() == std::numeric_limits<lbmdem::Lint>::max());
   }
 
@@ -38,7 +38,7 @@ TEST_CASE("LB node is checked for 3D case with id & coordinates",
     lbmdem::Lint id = 0;
     //! Check for coordinates being zero
     SECTION("Coordinates are zero") {
-      auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+      auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords);
       auto coordinates = node->coordinates();
       for (unsigned i = 0; i < coordinates.size(); ++i)
         REQUIRE(coordinates.at(i) == coords.at(i));
@@ -49,7 +49,7 @@ TEST_CASE("LB node is checked for 3D case with id & coordinates",
     SECTION("Coordinates are negative values") {
       for (auto &coord : coords)
         coord = -1. * std::numeric_limits<lbmdem::Real>::max();
-      auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+      auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords);
       auto coordinates = node->coordinates();
       for (unsigned i = 0; i < coordinates.size(); ++i)
         REQUIRE(coordinates.at(i) == coords.at(i));
@@ -61,7 +61,7 @@ TEST_CASE("LB node is checked for 3D case with id & coordinates",
     SECTION("Coordinates are positive values") {
       for (auto &coord : coords)
         coord = std::numeric_limits<lbmdem::Real>::max();
-      auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+      auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords);
       auto coordinates = node->coordinates();
       for (unsigned i = 0; i < coordinates.size(); ++i)
         REQUIRE(coordinates.at(i) == coords.at(i));
@@ -73,7 +73,7 @@ TEST_CASE("LB node is checked for 3D case with id & coordinates",
   //! Test state of lb node
   SECTION("State of LB node is checked") {
     lbmdem::Lint id = 0;
-    auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+    auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords);
     REQUIRE(node->isfluid() == true);
 
     node->isfluid(false);
@@ -83,7 +83,7 @@ TEST_CASE("LB node is checked for 3D case with id & coordinates",
   //! Test state of lb node
   SECTION("Force in LB node is checked") {
     lbmdem::Lint id = 0;
-    auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+    auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords);
     auto force = node->force();
     REQUIRE(force.size() == Dim);
     for (auto fcomponent : force)
@@ -109,7 +109,7 @@ TEST_CASE("LB node is checked for 3D case with id, coordinates and isfluid",
 
   //! Test state of lb node
   SECTION("State of LB node is checked for fluid") {
-    auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords, true);
+    auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords, true);
     REQUIRE(node->isfluid() == true);
 
     node->isfluid(false);
@@ -129,7 +129,7 @@ TEST_CASE("LB node is checked for 3D case with id, coordinates and isfluid",
 
   //! Test state of lb node
   SECTION("State of LB node is checked for solid") {
-    auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords, false);
+    auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords, false);
     REQUIRE(node->isfluid() == false);
 
     node->isfluid(true);
@@ -150,7 +150,7 @@ TEST_CASE("LB node is checked for 3D case with id, coordinates and isfluid",
   //! Test state of lb node
   SECTION("Force in LB node is checked") {
     lbmdem::Lint id = 0;
-    auto node = std::make_shared<lbmdem::LbNode<Dim>>(id, coords);
+    auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords);
     auto force = node->force();
     REQUIRE(force.size() == Dim);
     for (auto fcomponent : force)

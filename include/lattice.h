@@ -1,48 +1,56 @@
 #ifndef LBMDEM_LATTICE_H_
 #define LBMDEM_LATTICE_H_
 
-#include <algorithm>
-#include <array>
-#include <limits>
-
 #include "settings.h"
 
 namespace lbmdem {
-template <unsigned Tdim, unsigned Tdir>
+//! Abstract Lattice base class
+//! \brief Base class that stores the information about Lattice
+//! \tparam Tdim Dimension
+//! \tparam Tq Number of discrete velocity directions
+template <unsigned Tdim, unsigned Tq>
 class Lattice;
 }
 
-//! Abstract Lattice base class
-//! \brief Base class that stores the information about Lattice model
-//! \tparam Tdim Dimension
-//! \tparam Tdir Number of discrete velocity directions
-template <unsigned Tdim, unsigned Tdir>
-class lbmdem::Lattice {
+//! D2Q9 Lattice
+//! \brief Weights for the D2Q9 stencil
+template <>
+class lbmdem::Lattice<2, 9> {
  public:
-  //! \brief Constructor
-  Lattice();
-
-  //! Return weights
-  std::array<lbmdem::Real, Tdir> weights() const { return weights_; }
-
-  //! Return velocities
-  std::array<std::array<int, Tdir>, Tdim> velocities() const {
-    return velocities_;
+  lbmdem::Real weight(int x, int y) const {
+    if (abs(x) > 1) return 0.0;
+    if (abs(y) > 1) return 0.0;
+    switch ((x == 0) + (y == 0)) {
+      case 2:
+        return 4.0 / 9.0;
+      case 1:
+        return 1.0 / 9.0;
+      default:
+        return 1.0 / 36.0;
+    }
   }
-
- private:
-  //! Restict Copy constructor
-  Lattice(const Lattice&);
-
-  //! Restict Assignment operator
-  Lattice& operator=(const Lattice&);
-
-  //! Weights
-  std::array<lbmdem::Real, Tdir> weights_;
-  //! Velocities
-  std::array<std::array<int, Tdir>, Tdim> velocities_;
 };
 
-#include "lattice.tcc"
+//! D3Q27 Lattice
+//! \brief Weights for the D3Q27 lattice
+template <>
+class lbmdem::Lattice<3, 27> {
+ public:
+  lbmdem::Real weight(int x, int y, int z) const {
+    if (abs(x) > 1) return 0.0;
+    if (abs(y) > 1) return 0.0;
+    if (abs(z) > 1) return 0.0;
+    switch ((x == 0) + (y == 0) + (z == 0)) {
+      case 3:
+        return 8.0 / 27.0;
+      case 2:
+        return 2.0 / 27.0;
+      case 1:
+        return 1.0 / 54.0;
+      default:
+        return 1.0 / 216.0;
+    }
+  }
+};
 
-#endif  // LBMDEM_LATTICE_H_
+#endif //LBMDEM_LATTICE_H_
