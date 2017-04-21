@@ -81,15 +81,17 @@ matrix:
 
 
   - env: SPECIAL=cppcheck
-    before_install: ''
+    before_install:
+    - wget https://downloads.sourceforge.net/project/cppcheck/cppcheck/1.78/cppcheck-1.78.tar.gz
+    - tar xvf cppcheck-1.78.tar.gz
+    - cd cppcheck-1.78
+    - cmake -DCMAKE_BUILD_TYPE=Release
+    - make
+    - cd ..
     install: ''
     script:
-    - cppcheck --version
-    - cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
-    addons:
-      apt:
-        packages:
-        - cppcheck
+    - cppcheck-1.78/bin/cppcheck --version
+    - cppcheck-1.78/bin/cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
 
   - env:
     - SPECIAL=clang-static
