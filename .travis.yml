@@ -43,6 +43,14 @@ env:
   - CXX_COMPILER=clang-3.8
   - CXX_COMPILER=clang-3.9
 
+matrix:
+  include:
+  - script: cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
+    addons:
+      apt:
+        packages:
+        - cppcheck
+
   #   # Coverity scan 
   #   - compiler: gcc
   #     env:
