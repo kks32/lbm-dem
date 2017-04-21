@@ -110,6 +110,20 @@ matrix:
     - scan-build cmake .. -DCMAKE_CXX_FLAGS='-Wall -Wextra'
     - scan-build make
 
+  - env: SPECIAL=coverity
+    addons:
+      apt:
+        coverity_scan:
+          project:
+            name: "cb-geo/lbmdem"
+            description: "LBM-DEM Coverity scan build submitted via Travis CI"
+          notification_email: cued.geomechanics@gmail.com
+          build_command_prepend: "cmake ."
+          build_command:   "make"
+          branch_pattern: coverity_scan
+      script:
+      - echo coverity
+
 
   #   # Coverity scan 
   #   - compiler: gcc
