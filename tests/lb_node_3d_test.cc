@@ -48,7 +48,7 @@ TEST_CASE("LB node is checked for 3D case with id & coordinates",
     //! Check for negative value of coordinates
     SECTION("Coordinates are negative values") {
       for (auto &coord : coords)
-        coord = -1. * std::numeric_limits<lbmdem::Real>::max();
+        coord = std::numeric_limits<lbmdem::Lint>::min();
       auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords);
       auto coordinates = node->coordinates();
       for (unsigned i = 0; i < coordinates.size(); ++i)
@@ -60,7 +60,7 @@ TEST_CASE("LB node is checked for 3D case with id & coordinates",
     //! Check for positive value of coordinates
     SECTION("Coordinates are positive values") {
       for (auto &coord : coords)
-        coord = std::numeric_limits<lbmdem::Real>::max();
+        coord = std::numeric_limits<lbmdem::Lint>::max();
       auto node = std::make_shared<lbmdem::LBNode<Dim>>(id, coords);
       auto coordinates = node->coordinates();
       for (unsigned i = 0; i < coordinates.size(); ++i)

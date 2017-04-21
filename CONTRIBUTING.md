@@ -39,6 +39,7 @@ Thank you for contributing!
     * :speaker: `:speaker:` when adding logging
     * :mute: `:mute:` when reducing logging
     * :shirt: `:shirt:` when removing linter warnings
-    * :wrench: `:wrench:` Fixing broken items
+    * :wrench: `:wrench:` Fixing broken stuff
+    * :paperclip: `:paperclip:` Merge changes
 
 
