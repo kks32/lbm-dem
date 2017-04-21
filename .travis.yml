@@ -89,7 +89,6 @@ matrix:
 
   - env:
     - SPECIAL=clang-static
-    - CXX_COMPILER=clang++-3.9
     - ASAN="ON"
     - MSAN="ON"
     - TSAN="ON"
@@ -98,13 +97,14 @@ matrix:
     - CLANG_FORMAT="ON"
     - CLANG_TIDY="ON"
     - PREFIX_TOOL="scan-build"
+    compiler: clang
     addons:
       apt:
         sources:
         - ubuntu-toolchain-r-test
-        - llvm-toolchain-precise-3.9
+        - llvm-toolchain-precise
         packages:
-        - clang-3.9
+        - clang
 
   #   # Coverity scan 
   #   - compiler: gcc
