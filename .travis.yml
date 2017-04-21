@@ -83,7 +83,9 @@ matrix:
   - env: SPECIAL=cppcheck
     before_install: ''
     install: ''
-    script: cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
+    script:
+    - cppcheck --version
+    - cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
     addons:
       apt:
         packages:
