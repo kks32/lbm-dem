@@ -87,6 +87,25 @@ matrix:
         packages:
         - cppcheck
 
+  - env:
+    - SPECIAL=clang-static
+    - CXX_COMPILER=clang++-3.9
+    - ASAN="ON"
+    - MSAN="ON"
+    - TSAN="ON"
+    - UBSAN="ON"
+    - STATIC_ANALYZER="ON"
+    - CLANG_FORMAT="ON"
+    - CLANG_TIDY="ON"
+    - PREFIX_TOOL="scan-build"
+    addons:
+      apt:
+        sources:
+        - ubuntu-toolchain-r-test
+        - llvm-toolchain-precise-3.9
+        packages:
+        - clang-3.9
+
   #   # Coverity scan 
   #   - compiler: gcc
   #     env:
@@ -129,20 +148,6 @@ matrix:
   #       - bash <(curl -s https://codecov.io/bash) -X gcov
 
 
-  #   # Valgrind and cppcheck
-  #   - compiler: gcc
-  #     env:
-  #       - COMPILER=g++-5
-  #       - SPECIAL=valgrind
-  #     addons:
-  #       apt:
-  #         sources: ['ubuntu-toolchain-r-test']
-  #         packages: ['g++-5', 'cppcheck', 'valgrind']
-  #     after_success:
-  #       - valgrind --error-exitcode=1 --leak-check=full ./lbmdem
-  #       - valgrind --error-exitcode=1 --leak-check=full ./lbmdemtest
-  #       - cd .. && cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
-
   #   # Clang static analysis
   #   - os: linux
   #     compiler: clang
@@ -175,8 +180,8 @@ matrix:
 script:
     - mkdir build
     - cd build
-    - cmake .. -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS='-Wall -Wextra'
-    - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make ; fi
+    - ${PREFIX_TOOL} cmake .. -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS='-Wall -Wextra'
+    - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then ${PREFIX_TOOL} make ; fi
     - ctest -VV
     - ctest -VV -D ExperimentalMemCheck
 
