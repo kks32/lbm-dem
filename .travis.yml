@@ -17,9 +17,10 @@ git:
 
 env:
   global:
-   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
-   #   via the "travis encrypt" command using the project repo's public key
-  - secure: "j3gxQHpmALWW1VYvX2+rv/xJ2H32W0SQXkyY83PY/PJxphuiIxWtSAM6wn0SWgBBKIi/1IAUU7xiEQewodkMXB0hjLxUDEsr7nhONPxkdFmgM4nOuqDmR2XJPACpWZV8H1aDxl37vYeWCIio0o2Q1TxtCFz4cENpVmbfuGnq3RCdDWkiwvzQqnXmk0Ac8hRS6KrWwBGOeoCFiR7+/wf0/6lYZZB+KBY7Vjuc40Zv3KZIH4tDfokrQDBmXluV4pQiPc1yz7xy180HNs2pRSTlEfknKGm/Go/wnEVu+OiEugVNt/mP1PRFV52+QuKnjqjOkrtlnEM5al/tza/PAyNdGOEoowAyjMJ8gOIw0NUWXIFZ8EQ0cvgVpLq2Azaamiq43wCVRrH7Ybg7lAVZt8+aQz7CsSbq08qS+OjxRijKxZ4pSRcYoeyXWmZ9K2rRyrJUQTE/v5i0EEgOdFwInxeOxlAgrHu1FhF9gAY+Bgb+O7XPFZTnkHkJlVghk+/mTHLVJpJ03t9gdYrqrENH7m2VfeE+q5zjxRuejLzWzrH5fSJewc3E4IUQqiJfM3NcS7Ra+p5ToRyhm/bnYJotptW6PAV2rJUK3PvLL+uLkSooHDoT/wRi9PvgKzSuXcs0pW7w0Uep0VlpJBzuMi3plI9pY/QDjnIlWwCzRCByWQ3wFsY="
+    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+    #   via the "travis encrypt" command using the project repo's public key
+    - secure: "IJtre+FcQfrrqdusN2Kb9RHv39IQOKzmmiJKXqzNzTL/NCn/U22DCNwW3w0vD+YuqOPJtfh9/zgZ6fuEPtQlUm0YcXCFISoy88E7vwQqidIlipnr0PXIhStEOakNn3AAj9IKwd8cU0oGYK4kAs7mZJTWlOAaJwYe4/huUHwsB2EBQYt5ijEVyYwDX/qQADjZpn9RY/JECgdklJnLjVluUR7hXf3TsC8JG7818lW5rIhLhyrJL5Un+oVzS82AdLsy11DeLPFHTtvsNIh/tPJg1CVgSvKYrwtrsS2TvUpO+pJKEQZk5cTlNXOm2euqSoUDVNUCvUlQb6zGWknFu+NJ4azrY79OaveFRlGcHT0/ulhADyGI0WoD75Yf0MJbc3vfzccFW2kQnz5bVR/M4IO1MxClH8gkXNofuZYQoLE8TyDhqpG2FRHkn4c4e8yMpER0f8Pyq7oh3+NXIvGsyNgxBDiSLpTyCYn/US8vZZ+ZXPWVgTMtcX0mabrJAHsPUuTiDET2rhnj4BUrjRkQ7iRNhvoJCgIo0l54+Femr5NkiE73aCsxgXL4vQHGxO6VHkMVI5dj+meAraugqfBruLaWm5JnYp6cFYEAbqmzlJZPkunNv/i3JFhm2Wl8FGGXt3g79IiZ5EAbR3Bl+mh348/WfxUG9rLnX+RqZ09MkVw5xDE="
+
 
 ##################
 # Before install #
@@ -46,7 +47,7 @@ matrix:
           packages: ['g++-5', 'valgrind', 'libeigen3-dev']
         coverity_scan:
           project:
-            name: "cb-geo/lbmdem"
+            name: "cb-geo/lbm-dem"
             description: "LBM-DEM Coverity scan build submitted via Travis CI"
           notification_email: cued.geomechanics@gmail.com
           build_command_prepend: "cmake ."
