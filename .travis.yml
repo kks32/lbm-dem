@@ -97,14 +97,13 @@ matrix:
     - CLANG_FORMAT="ON"
     - CLANG_TIDY="ON"
     - PREFIX_TOOL="scan-build"
-    compiler: clang-3.9
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        - llvm-toolchain-precise-3.9
-        packages:
-        - clang-3.9
+    compiler: clang
+    script:
+    - mkdir build
+    - cd build
+    - scan-build cmake .. -DCMAKE_CXX_FLAGS='-Wall -Wextra'
+    - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then scan-build make ; fi
+
 
   #   # Coverity scan 
   #   - compiler: gcc
