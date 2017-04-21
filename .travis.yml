@@ -184,7 +184,7 @@ script:
     - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then ${PREFIX_TOOL} make ; fi
     - ctest -VV
     - ctest -VV -D ExperimentalMemCheck
-    - cmake . -DCMAKE_CXX_FLAGS='-fsanitize=address -fsanitize=leak -fsanitize=undefined'
+    - cmake . -DCMAKE_CXX_FLAGS='-fuse-ld=gold -fsanitize=address -fsanitize=leak -fsanitize=undefined'
     - make
     - ctest -VV
 
