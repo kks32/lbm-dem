@@ -46,7 +46,7 @@ matrix:
         packages:
         - g++-6
 
-  - env: CXX_COMPILER=clang-3.7
+  - env: CXX_COMPILER=clang++-3.7
     addons:
       apt:
         sources:
@@ -55,7 +55,7 @@ matrix:
         packages:
         - clang-3.7
 
-  - env: CXX_COMPILER=clang-3.8
+  - env: CXX_COMPILER=clang++-3.8
     addons:
       apt:
         sources:
@@ -64,7 +64,7 @@ matrix:
         packages:
         - clang-3.8
 
-  - env: CXX_COMPILER=clang-3.9
+  - env: CXX_COMPILER=clang++-3.9
     addons:
       apt:
         sources:
