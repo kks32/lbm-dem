@@ -18,7 +18,7 @@ template <unsigned Tdim, unsigned Tq>
 class lbmdem::Lattice {
  public:
   //! Index of opposite node in a stencil
-  int opposite(int i) const { return Tq - i - 1; }
+  unsigned opposite(unsigned i) const { return Tq - i - 1; }
 
   //! Lattice weights
   static const std::array<lbmdem::Real, Tq> weights;

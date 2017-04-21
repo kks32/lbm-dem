@@ -28,7 +28,7 @@ TEST_CASE("D2Q9 Lattice parameters are checked", "[LBM][Lattice][D2Q9]") {
 
   SECTION("D2Q9 lattice weights sum to 1") {
     lbmdem::Real sum = 0;
-    for (int i = 0; i < NQ; ++i)
+    for (unsigned i = 0; i < NQ; ++i)
       sum += d2q9.weights.at(i);
     REQUIRE(sum == Approx(1.0));
   }
@@ -62,9 +62,9 @@ TEST_CASE("D2Q9 Lattice parameters are checked", "[LBM][Lattice][D2Q9]") {
   }
 
   SECTION("D2Q9 opposite lattice velocities are equal and opposite") {
-    for (int i = 0; i < NQ; ++i) {
-      int j = d2q9.opposite(i);
-      for (int k = 0; k < DIM; ++k)
+    for (unsigned i = 0; i < NQ; ++i) {
+      auto j = d2q9.opposite(i);
+      for (unsigned k = 0; k < DIM; ++k)
         REQUIRE(d2q9.velocities.at(i).at(k) + d2q9.velocities.at(j).at(k) ==
                 Approx(0.0));
     }
@@ -103,7 +103,7 @@ TEST_CASE("D3Q19 Lattice parameters are checked", "[LBM][Lattice][D3Q19]") {
 
   SECTION("D3Q19 lattice weights sum to 1") {
     lbmdem::Real sum = 0;
-    for (int i = 0; i < NQ; ++i)
+    for (unsigned i = 0; i < NQ; ++i)
       sum += d3q19.weights.at(i);
     REQUIRE(sum == Approx(1.0));
   }
@@ -180,9 +180,9 @@ TEST_CASE("D3Q19 Lattice parameters are checked", "[LBM][Lattice][D3Q19]") {
   }
 
   SECTION("D3Q19 opposite lattice velocities are equal and opposite") {
-    for (int i = 0; i < NQ; ++i) {
-      int j = d3q19.opposite(i);
-      for (int k = 0; k < DIM; ++k)
+    for (unsigned i = 0; i < NQ; ++i) {
+      auto j = d3q19.opposite(i);
+      for (unsigned k = 0; k < DIM; ++k)
         REQUIRE(d3q19.velocities.at(i).at(k) + d3q19.velocities.at(j).at(k) ==
                 Approx(0.0));
     }
@@ -230,7 +230,7 @@ TEST_CASE("D3Q27 Lattice parameters are checked", "[LBM][Lattice][D3Q27]") {
 
   SECTION("D3Q27 lattice weights sum to 1") {
     lbmdem::Real sum = 0;
-    for (int i = 0; i < NQ; ++i)
+    for (unsigned i = 0; i < NQ; ++i)
       sum += d3q27.weights.at(i);
     REQUIRE(sum == Approx(1.0));
   }
@@ -334,9 +334,9 @@ TEST_CASE("D3Q27 Lattice parameters are checked", "[LBM][Lattice][D3Q27]") {
   }
 
   SECTION("D3Q27 opposite lattice velocities are opposite") {
-    for (int i = 0; i < NQ; ++i) {
-      int j = d3q27.opposite(i);
-      for (int k = 0; k < DIM; ++k)
+    for (unsigned i = 0; i < NQ; ++i) {
+      auto j = d3q27.opposite(i);
+      for (unsigned k = 0; k < DIM; ++k)
         REQUIRE(d3q27.velocities.at(i).at(k) + d3q27.velocities.at(j).at(k) ==
                 Approx(0.0));
     }
