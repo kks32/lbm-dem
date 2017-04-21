@@ -127,9 +127,6 @@ matrix:
         build_command:   "make"
         branch_pattern: coverity_scan
     script: ''
-    branches:
-      only:
-        - coverity_scan
 
   - env:
     - SPECIAL=codecov
