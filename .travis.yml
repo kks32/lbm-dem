@@ -81,6 +81,8 @@ matrix:
 
 
   - env: SPECIAL=cppcheck
+    before_install: ''
+    install: ''
     script: cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
     addons:
       apt:
@@ -104,11 +106,10 @@ matrix:
         - ubuntu-toolchain-r-test
         packages:
         - clang
-    script:
-    - mkdir build
-    - cd build
+    install:
     - scan-build cmake .. -DCMAKE_CXX_FLAGS='-Wall -Wextra'
     - scan-build make
+    script: ''
 
   - env: SPECIAL=coverity
     addons:
@@ -120,8 +121,27 @@ matrix:
         build_command_prepend: "cmake ."
         build_command:   "make"
         branch_pattern: coverity_scan
+    script: ''
+
+  - env:
+    - SPECIAL=codecov
+    - CXX_COMPILER=g++-5
+    addons:
+      apt:
+        sources:
+        - ubuntu-toolchain-r-test
+        packages:
+        - g++-5
+        - lcov
+    install:
+    - cmake .. -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DENABLE_COVERAGE=ON
+    - make
     script:
-      - echo coverity
+    - ctest -VV
+    after_success:
+    - make gcov
+    - make lcov
+    - bash <(curl -s https://codecov.io/bash) -X gcov
 
 
   #   # Coverity scan 
@@ -169,12 +189,15 @@ matrix:
 ################
 # build script #
 ################
-
-script:
+before_install:
     - mkdir build
     - cd build
+
+install:
     - cmake .. -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS='-Wall -Wextra'
     - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make ; fi
+
+script:
     - ctest -VV
     - ctest -VV -D ExperimentalMemCheck
 
