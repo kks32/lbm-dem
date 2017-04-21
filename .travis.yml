@@ -97,14 +97,14 @@ matrix:
     - CLANG_FORMAT="ON"
     - CLANG_TIDY="ON"
     - PREFIX_TOOL="scan-build"
-    compiler: clang
+    compiler: clang-3.9
     addons:
       apt:
         sources:
         - ubuntu-toolchain-r-test
-        - llvm-toolchain-precise
+        - llvm-toolchain-precise-3.9
         packages:
-        - clang
+        - clang-3.9
 
   #   # Coverity scan 
   #   - compiler: gcc
