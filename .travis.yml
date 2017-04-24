@@ -52,29 +52,6 @@ matrix:
           build_command_prepend: "cmake ."
           build_command:   "make"
           branch_pattern: coverity_scan
-   
-    # Codecov
-    - compiler: gcc
-      env:
-        - COMPILER=g++-5
-        - SPECIAL=codecoverage
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5', 'ruby']
-      before_script:
-        - wget http://ftp.de.debian.org/debian/pool/main/l/lcov/lcov_1.11.orig.tar.gz
-        - tar xf lcov_1.11.orig.tar.gz
-        - sudo make -C lcov-1.11/ install
-      after_success:
-        - rm -rf ./* && cmake .. -DENABLE_COVERAGE=On
-        - make clean && make
-        - ./lbmdem
-        - ./lbmdemtest
-        - make gcov
-        - make lcov
-        - bash <(curl -s https://codecov.io/bash) -X gcov
-
 
     # Valgrind and cppcheck
     - compiler: gcc

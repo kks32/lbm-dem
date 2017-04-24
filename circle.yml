@@ -28,9 +28,9 @@ jobs:
           command: |
             cppcheck --version
             cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
-      # cppcheck
+      # codecoverage
       - run:
-          name: codecoverage
+          name: codecov.io
           command: |
             cd build && rm -rf ./*
             cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On -DENABLE_COVERAGE=On ..
