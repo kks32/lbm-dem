@@ -113,25 +113,6 @@ matrix:
         branch_pattern: coverity_scan
     script: ''
 
-  - env:
-    - SPECIAL=codecov
-    - CXX_COMPILER=g++-5
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        packages:
-        - g++-5
-        - lcov
-    install:
-    - cmake .. -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DENABLE_COVERAGE=ON
-    - make
-    script:
-    - ctest -VV
-    after_success:
-    - make gcov
-    - make lcov
-    - bash <(curl -s https://codecov.io/bash) -X gcov
 
 ################
 # build script #
