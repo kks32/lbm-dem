@@ -18,7 +18,6 @@ jobs:
       - run:
           name: Clang-3.9 build
           command: |
-            ls
             cd build && rm -rf ./*
             cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On .. 
             make clean && make -j8 
@@ -29,4 +28,15 @@ jobs:
           command: |
             cppcheck --version
             cppcheck --enable=warning --inconclusive --force --std=c++11 src/*.cc include/*.h include/*.tcc --error-exitcode=1
+      # cppcheck
+      - run:
+          name: codecoverage
+          command: |
+            cd build && rm -rf ./*
+            cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On -DENABLE_COVERAGE=On ..
+            make clean && make
+            ./lbmdemtest
+            make gcov
+            make lcov
+            bash <(curl -s https://codecov.io/bash) -X gcov
 
