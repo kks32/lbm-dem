@@ -51,7 +51,10 @@ add_executable(lbmdemtest
                ${test_src}
 )
 add_test(NAME lbmdemtest COMMAND $<TARGET_FILE:lbmdemtest>)
-enable_testing()
+include(CTest)
+
+find_program( MEMORYCHECK_COMMAND valgrind )
+set( MEMORYCHECK_COMMAND_OPTIONS "--leak-check=full --error-exitcode=1" )
 
 # Coverage
 find_package(codecov)
