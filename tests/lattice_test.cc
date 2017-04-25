@@ -189,6 +189,16 @@ TEST_CASE("D3Q19 Lattice parameters are checked", "[LBM][Lattice][D3Q19]") {
     REQUIRE(d3q19.velocities.at(18).at(2) == 1);
   }
 
+  SECTION("D3Q19 lattice velocities sum to zero") {
+    std::array<lbmdem::Real, DIM> sum{0};
+    for (unsigned i = 0; i < NQ; ++i)
+      for (unsigned j = 0; j < DIM; ++j)
+        sum.at(j) += d3q19.velocities.at(i).at(j);
+
+    for (unsigned j = 0; j < DIM; ++j)
+      REQUIRE(sum.at(j) == Approx(0.0));
+  }
+
   SECTION("D3Q19 opposite lattice velocities are equal and opposite") {
     for (unsigned i = 0; i < NQ; ++i) {
       auto j = d3q19.opposite(i);
