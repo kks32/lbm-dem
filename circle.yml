@@ -10,18 +10,22 @@ jobs:
       - run:
           name: GCC-6 build
           command: |
-            mkdir build && cd build
+            mkdir -p build
+            [ "$(ls -A build)" ] && rm -rf build/*
+            cd build
             cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On .. 
-            make clean && make -j8 
-            ./lbmdemtest
+            make -j8 
+            ctest -VV
       # GCC 3.9
       - run:
           name: Clang-3.9 build
           command: |
-            cd build && rm -rf ./*
+            mkdir -p build
+            [ "$(ls -A build)" ] && rm -rf build/*
+            cd build
             cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On .. 
-            make clean && make -j8 
-            ./lbmdemtest
+            make -j8 
+            ctest -VV
       # cppcheck
       - run:
           name: cppcheck
@@ -32,10 +36,13 @@ jobs:
       - run:
           name: codecov.io
           command: |
-            cd build && rm -rf ./*
+            mkdir -p build
+            [ "$(ls -A build)" ] && rm -rf build/*
+            cd build
             cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On -DENABLE_COVERAGE=On ..
-            make clean && make
-            ./lbmdemtest
+            make -j8
+            ./lbmdem
+            ctest -VV
             make gcov
             make lcov
             bash <(curl -s https://codecov.io/bash) -X gcov
