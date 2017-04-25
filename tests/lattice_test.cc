@@ -61,6 +61,16 @@ TEST_CASE("D2Q9 Lattice parameters are checked", "[LBM][Lattice][D2Q9]") {
     REQUIRE(d2q9.velocities.at(8).at(1) == 1);
   }
 
+  SECTION("D2Q9 lattice velocities sum to zero") {
+    std::array<lbmdem::Real, DIM> sum{0};
+    for (unsigned i = 0; i < NQ; ++i)
+      for (unsigned j = 0; j < DIM; ++j)
+        sum.at(j) += d2q9.velocities.at(i).at(j);
+
+    for (unsigned j = 0; j < DIM; ++j)
+      REQUIRE(sum.at(j) == Approx(0.0));
+  }
+
   SECTION("D2Q9 opposite lattice velocities are equal and opposite") {
     for (unsigned i = 0; i < NQ; ++i) {
       auto j = d2q9.opposite(i);
