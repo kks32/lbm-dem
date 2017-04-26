@@ -3,7 +3,6 @@
 
 #include "lattice.h"
 #include "factory.h"
-#include "lb_node.h"
 #include "settings.h"
 
 int main(int argc, char** argv) {
