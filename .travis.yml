@@ -118,7 +118,7 @@ matrix:
 # build script #
 ################
 before_install:
-    - git clone https://github.com/kokkos/kokkos.git && cd kokkos && mkdir -p $HOME/kokkos && mkdir build && cd build && ../generate_makefile.bash --with-openmp --prefix=$HOME/kokkos && make && make install
+    - git clone https://github.com/kokkos/kokkos.git && cd kokkos && mkdir -p $HOME/kokkos && mkdir build && cd build && ../generate_makefile.bash --with-openmp --prefix=$HOME/kokkos && make && make install && cd ../.. && pwd
     - mkdir build
     - cd build
 
