@@ -59,8 +59,6 @@ SET(test_src
     src/lattice.cc
     tests/test.cc
     tests/lattice_test.cc
-    tests/lb_node_2d_test.cc
-    tests/lb_node_3d_test.cc
     tests/patch.cc
 )
 add_executable(lbmdemtest
