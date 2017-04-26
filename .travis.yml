@@ -118,12 +118,12 @@ matrix:
 # build script #
 ################
 before_install:
-    - git clone https://github.com/kokkos/kokkos.git && cd kokkos && mkdir -p /usr/kokkos && mkdir build && cd build && ../generate_makefile.bash --with-openmp --prefix=/usr/kokkos && make && make install
+    - git clone https://github.com/kokkos/kokkos.git && cd kokkos && mkdir -p $HOME/kokkos && mkdir build && cd build && ../generate_makefile.bash --with-openmp --prefix=$HOME/kokkos && make && make install
     - mkdir build
     - cd build
 
 install:
-    - cmake .. -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS='-Wall -Wextra -Werror -Wno-unused-parameter -Wno-missing-braces' -DKOKKOS_ROOT=/usr/kokkos
+    - cmake .. -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS='-Wall -Wextra -Werror -Wno-unused-parameter -Wno-missing-braces' -DKOKKOS_ROOT=$HOME/kokkos
     - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make ; fi
 
 script:
