@@ -6,7 +6,7 @@
 #
 
 if(NOT ${KOKKOS_ROOT})
-	set(KOKKOS_ROOT "/usr" CACHE PATH "Root directory of Kokkos installation")
+	set(KOKKOS_ROOT "/opt/kokkos" CACHE PATH "Root directory of Kokkos installation")
 endif()
 
 find_file(KOKKOS_CMAKE "kokkos.cmake" HINTS ${KOKKOS_ROOT} PATHS ENV CMAKE_PREFIX_PATH)
