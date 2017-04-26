@@ -2,6 +2,7 @@ project(lbmdem LANGUAGES CXX)
 
 # Require C++11-compliant compiler; only available for CMake v. 3.1 and up
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 cmake_minimum_required(VERSION 3.1)
 
@@ -60,6 +61,7 @@ SET(test_src
     tests/lattice_test.cc
     tests/lb_node_2d_test.cc
     tests/lb_node_3d_test.cc
+    tests/patch.cc
 )
 add_executable(lbmdemtest
                ${test_src}
