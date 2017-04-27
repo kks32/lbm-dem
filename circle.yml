@@ -16,6 +16,16 @@ jobs:
             cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On  -DKOKKOS_ROOT=/opt/kokkos/ ..
             make -j8 
             ctest -VV
+      # Clang 3.9
+      - run:
+          name: Clang-3.9 build
+          command: |
+            mkdir -p build
+            [ "$(ls -A build)" ] && rm -rf build/*
+            cd build
+            cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_EXPORT_COMPILE_COMMANDS=On  -DKOKKOS_ROOT=/opt/kokkos/ ..
+            make -j8 
+            ctest -VV
       # cppcheck
       - run:
           name: cppcheck
