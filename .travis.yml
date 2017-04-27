@@ -58,6 +58,10 @@ matrix:
         packages:
         - clang-3.7
         - valgrind
+    compiler: clang
+    install:
+    - cmake .. -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS='-Wall -Wextra -Werror -Wno-unused-parameter -Wno-missing-braces -fopenmp=libomp' -DKOKKOS_ROOT=$HOME/kokkos
+    - make -j8
 
   - env: CXX_COMPILER=clang++-3.8
     addons:
@@ -68,6 +72,10 @@ matrix:
         packages:
         - clang-3.8
         - valgrind
+    compiler: clang
+    install:
+    - cmake .. -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS='-Wall -Wextra -Werror -Wno-unused-parameter -Wno-missing-braces -fopenmp=libomp' -DKOKKOS_ROOT=$HOME/kokkos
+    - make -j8
 
   - env: CXX_COMPILER=clang++-3.9
     addons:
@@ -78,6 +86,10 @@ matrix:
         packages:
         - clang-3.9
         - valgrind
+    compiler: clang
+    install:
+    - cmake .. -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS='-Wall -Wextra -Werror -Wno-unused-parameter -Wno-missing-braces -fopenmp=libomp' -DKOKKOS_ROOT=$HOME/kokkos
+    - make -j8
 
   - env:
     - SPECIAL=clang-static
@@ -97,7 +109,7 @@ matrix:
         packages:
         - clang
     install:
-    - scan-build cmake .. -DCMAKE_CXX_FLAGS='-Wall -Wextra'
+    - scan-build cmake .. -DCMAKE_CXX_FLAGS='-Wall -Wextra -fopenmp=libomp'
     - scan-build make
     script: ''
 
