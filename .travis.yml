@@ -49,58 +49,6 @@ matrix:
         - g++-6
         - valgrind
 
-  - env: CXX_COMPILER=clang++-3.7
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        - llvm-toolchain-precise-3.7
-        packages:
-        - clang-3.7
-        - valgrind
-
-  - env: CXX_COMPILER=clang++-3.8
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        - llvm-toolchain-precise-3.8
-        packages:
-        - clang-3.8
-        - valgrind
-
-  - env: CXX_COMPILER=clang++-3.9
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        - llvm-toolchain-precise-3.9
-        packages:
-        - clang-3.9
-        - valgrind
-
-  - env:
-    - SPECIAL=clang-static
-    - ASAN="ON"
-    - MSAN="ON"
-    - TSAN="ON"
-    - UBSAN="ON"
-    - STATIC_ANALYZER="ON"
-    - CLANG_FORMAT="ON"
-    - CLANG_TIDY="ON"
-    - PREFIX_TOOL="scan-build"
-    compiler: clang
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        packages:
-        - clang
-    install:
-    - scan-build cmake .. -DCMAKE_CXX_FLAGS='-Wall -Wextra'
-    - scan-build make
-    script: ''
-
   - env: SPECIAL=coverity
     addons:
       coverity_scan:
@@ -118,11 +66,12 @@ matrix:
 # build script #
 ################
 before_install:
+    - git clone https://github.com/kokkos/kokkos.git && cd kokkos && mkdir -p $HOME/kokkos && mkdir build && cd build && ../generate_makefile.bash --with-openmp --prefix=$HOME/kokkos && make && make install && cd ../.. && pwd
     - mkdir build
     - cd build
 
 install:
-    - cmake .. -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS='-Wall -Wextra -Werror -Wno-unused-parameter -Wno-missing-braces'
+    - cmake .. -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS='-Wall -Wextra -Werror -Wno-unused-parameter -Wno-missing-braces' -DKOKKOS_ROOT=$HOME/kokkos
     - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make ; fi
 
 script:
