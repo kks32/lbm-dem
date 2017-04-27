@@ -9,19 +9,21 @@ TEST_CASE("patch object (2D)", "[LBM][Patch][2D]") {
 
   SECTION("lb.f has expected dims") {
     for (int i = 0; i < Dim; ++i)
-      REQUIRE(p.lb.f.dimension(i) == 64);
+      REQUIRE(p.lb.f.dimension(i) == 8);
     REQUIRE(p.lb.f.dimension(Dim) == Q);
   }
 
   SECTION("lb.force has expected dims") {
     for (int i = 0; i < Dim; ++i)
-      REQUIRE(p.lb.force.dimension(i) == 64);
+      REQUIRE(p.lb.force.dimension(i) == 8);
     REQUIRE(p.lb.force.dimension(Dim) == Dim);
   }
 
   SECTION("lb.f can be accessed") {
-    for (int i = 0; i < Q; ++i)
-      REQUIRE_NOTHROW(p.lb.f(0,0,i));
+    for (int x = 0; x < 8; ++x)
+      for (int y = 0; y < 8; ++y)
+        for (int i = 0; i < Q; ++i)
+          REQUIRE_NOTHROW(p.lb.f(x,y,i));
   }
 }
 
@@ -32,18 +34,21 @@ TEST_CASE("patch object (3D)", "[LBM][Patch][3D]") {
 
   SECTION("lb.f has expected dims") {
     for (int i = 0; i < Dim; ++i)
-      REQUIRE(p.lb.f.dimension(i) == 64);
+      REQUIRE(p.lb.f.dimension(i) == 8);
     REQUIRE(p.lb.f.dimension(Dim) == Q);
   }
 
   SECTION("lb.force has expected dims") {
     for (int i = 0; i < Dim; ++i)
-      REQUIRE(p.lb.force.dimension(i) == 64);
+      REQUIRE(p.lb.force.dimension(i) == 8);
     REQUIRE(p.lb.force.dimension(Dim) == Dim);
   }
 
   SECTION("lb.f can be accessed") {
-    for (int i = 0; i < Q; ++i)
-      REQUIRE_NOTHROW(p.lb.f(0,0,0,i));
+    for (int x = 0; x < 8; ++x)
+      for (int y = 0; y < 8; ++y)
+        for (int z = 0; z < 8; ++z)
+          for (int i = 0; i < Q; ++i)
+            REQUIRE_NOTHROW(p.lb.f(x,y,z,i));
   }
 }

@@ -16,8 +16,8 @@ public:
   Kokkos::View<double**[Tdim]> force;
 
   LB_Grid() :
-    f("f", 64, 64),
-    force("force", 64, 64) {}
+    f("f", 8, 8),
+    force("force", 8, 8) {}
 
 };
 
@@ -30,8 +30,8 @@ public:
   Kokkos::View<double***[Tdim]> force;
 
   LB_Grid() :
-    f("f", 64, 64, 64),
-    force("force", 64, 64, 64) {}
+    f("f", 8, 8, 8),
+    force("force", 8, 8, 8) {}
 };
 
 } // namespace lbmdem
