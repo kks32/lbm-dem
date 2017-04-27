@@ -74,3 +74,5 @@ set( MEMORYCHECK_COMMAND_OPTIONS "--leak-check=full --error-exitcode=1" )
 find_package(codecov)
 add_coverage(lbmdem)
 add_coverage(lbmdemtest)
+
+install(TARGETS lbmdem lbmdemtest RUNTIME DESTINATION bin)
