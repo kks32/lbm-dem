@@ -17,6 +17,7 @@ ENDIF (NOT CMAKE_BUILD_TYPE)
 # GNU Specific settings
 if (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
   SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive")
+  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror -Wno-unused-variable -Wno-unused-parameter -Wno-missing-braces")
 endif()
 
 # OpenMP
