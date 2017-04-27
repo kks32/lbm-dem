@@ -23,6 +23,7 @@ find_package(OpenMP)
 if (OPENMP_FOUND)
   set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
   set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+  add_compile_options(${OpenMP_CXX_FLAGS})
 endif()
 
 # LBM-DEM settings
@@ -33,8 +34,8 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 
 # KOKKOS
 find_package(KOKKOS REQUIRED)
-include_directories(${KOKKOS_INCLUDE_DIR})
-link_libraries(${KOKKOS_LIBRARIES} dl)
+include_directories(${KOKKOS_INCLUDE_DIRS})
+link_libraries(${KOKKOS_LIBRARIES})
 
 
 # Include directories
@@ -59,7 +60,6 @@ SET(test_src
     tests/lattice_test.cc
     tests/lb_node_2d_test.cc
     tests/lb_node_3d_test.cc
-    tests/kokkos.cc
 )
 add_executable(lbmdemtest
                ${test_src}
